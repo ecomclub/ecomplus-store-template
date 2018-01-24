@@ -13,3 +13,17 @@ This document is intended to list predefined mustache tags and
 HTML attributes for layout rendering with
 [ecomplus-store-render](https://github.com/ecomclub/ecomplus-store-render)
 Vue.js app.
+
+# Getting Started
+Your HTML file should include
+[Vue](https://vuejs.org/v2/),
+the [JS library for E-Com Plus storefront](https://github.com/ecomclub/ecomplus-sdk-js)
+and the [store renderer JS app](https://github.com/ecomclub/ecomplus-store-render):
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/sdk.min.js"></script>
+<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
+```
+
+# Guide
