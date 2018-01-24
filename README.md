@@ -15,10 +15,10 @@ HTML attributes for layout rendering with
 Vue.js app.
 
 # Getting Started
-Your HTML file should include
+Your HTML file must include
 [Vue](https://vuejs.org/v2/),
-the [JS library for E-Com Plus storefront](https://github.com/ecomclub/ecomplus-sdk-js)
-and the [store renderer JS app](https://github.com/ecomclub/ecomplus-store-render):
+the [storefront JS SDK](https://github.com/ecomclub/ecomplus-sdk-js)
+and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render):
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
