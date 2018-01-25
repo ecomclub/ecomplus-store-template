@@ -1,4 +1,4 @@
-https://ecomclub.github.io/ecomplus-store-template/
+[Hosted with GitHub Pages](https://ecomclub.github.io/ecomplus-store-template/)
 
 # Introduction
 E-Com Plus storefront uses
@@ -32,3 +32,13 @@ EcomStore.init()
 # Guide
 HTML attributes will be named with the prefix `ecom-`,
 mustache tags with prefix (object) `Ecom.`.
+
+## Body
+HTML body tag must have the attribute `ecom-store`
+with the ID of current store.
+
+Example:
+
+```html
+<body ecom-store="100">
+```
