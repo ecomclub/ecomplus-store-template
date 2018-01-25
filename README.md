@@ -75,6 +75,17 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 Each `._ecom-store` element will be an
 <a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>.
 
+### Specifying language
+If you don't want to use the store default configured language,
+you can use the attribute `data-ecom-lang`:
+
+```html
+<div class="_ecom-store" data-ecom-store="100" data-ecom-lang="en_us">
+```
+
+Use lowercase letters and separate lang of country (if specified) by underline,
+eg.: `pt_br`, `en_us`, `it`, `es`.
+
 ## Store API objects
 Each HTML element with class `_ecom-el` will
 represent an object declaration, preceded of a GET request to
@@ -124,10 +135,10 @@ Possible values for `data-ecom-type`:
 
 ```html
 <div class="_ecom-el" data-ecom-o="p2" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
-  <div v-bind:data-sku="p2.sku" v-if="p2.visible">
-    <img v-bind:src="p2.pictures[0].normal.url" v-bind:alt="p2.pictures[0].normal.alt"/>
+  <div v-bind:class="'prod-' + p2.sku" v-if="p2.visible">
+    <img v-bind:src="p2.pictures[0].normal.url" v-bind:alt="p2.pictures[0].normal.alt" />
     <h3> {{ p2.name }} </h3>
-    <p class="price"> {{ p2.currency_symbol }} {{ formatMoney(p2.price) }} </p>
+    <p class="price"> {{ p2.currency_symbol }} {{ EcomStore.formatMoney(p2.price) }} </p>
     <button v-if="p2.quantity > p2.min_quantity" class="buy"> Buy </button>
     <div class="no-stock" v-else> Out of stock </div>
   </div>
@@ -139,5 +150,7 @@ Possible values for `data-ecom-type`:
 </a>
 
 Note that you can use similar code for other types of objects (API resources).
+
+### List products from collection
 
 {% endraw %}
