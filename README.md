@@ -1,6 +1,14 @@
 [Hosted on GitHub Pages](https://ecomclub.github.io/ecomplus-store-template/)
 
-{% raw %}
+# Summary
+1. [Introduction](#introduction)
+2. [Getting started](#getting-started)
+3. [Guide](#guide)
+    * [App main element](#app-main-element)
+    * [Store API objects](#store-api-objects)
+        * [Object types](#object-types)
+        * [Basic product samples](#basic-product-samples)
+
 # Introduction
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
@@ -103,6 +111,8 @@ Possible values for `data-ecom-type`:
   Object reference
 </a>
 
+{% raw %}
+
 ```html
 <div class="_ecom-el" data-ecom-o="p1" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <h3> {{ p1.name }} </h3>
@@ -124,5 +134,6 @@ Possible values for `data-ecom-type`:
 </div>
 ```
 
-Note that you can use similar code for other types of objects (API resources).
 {% endraw %}
+
+Note that you can use similar code for other types of objects (API resources).
