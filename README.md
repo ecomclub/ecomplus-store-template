@@ -26,4 +26,11 @@ and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render)
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
 ```
 
+Then, start the layout rendering with JS below:
+
+```javascript
+EcomStore.init()
+```
+
 # Guide
+All mustache tags must be named with prefix `Ecom`
