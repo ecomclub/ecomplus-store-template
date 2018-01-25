@@ -10,6 +10,7 @@
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
             * [Basic product samples](#basic-product-samples)
+            * [List products from collection](#list-products-from-collection)
         * [Search API objects](#search-api-objects)
 
 {% raw %}
@@ -157,22 +158,20 @@ Note that you can use similar code for other types of objects (API resources).
 
 #### List products from collection
 To list products of a collection you have to use
-<a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list rendering</a>.
-Inside the loop you must call the method `EcomStore.el('id')` specifying
-the id of the rendered HTML element (array element):
+the attribute `data-ecom-list` and implement a
+<a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a>:
 
 ```html
-<div class="_ecom-el" data-ecom-type="collection" data-ecom-id="c92000000000000000001111">
+<div class="_ecom-el" data-ecom-type="collection" data-ecom-list="products,0,12" data-ecom-id="c92000000000000000001111">
   <h4> {{ name }} </h3>
   <ul>
-    <li v-for="(productId, index) in products">
-      <div class="_ecom-el" data-ecom-type="product" v-bind:id="'coll-prod-' + index" v-bind:data-ecom-id="productId">
-        <h3> {{ name }} </h3>
-        <p class="price"> {{ currency_symbol }} {{ price }} </p>
-        <p class="sku"> Code: {{ sku }} </p>
+    <li v-for="product in List">
+      <div class="_ecom-el" data-ecom-type="product" v-bind:data-ecom-id="product._id">
+        <h3> {{ product.name }} </h3>
+        <p class="price"> {{ product.currency_symbol }} {{ product.price }} </p>
+        <p class="sku"> Code: {{ product.sku }} </p>
         <button class="buy"> Buy </button>
       </div>
-      {{ EcomStore.el('coll-prod-' + index) }}
     </li>
   </ul>
 </div>
