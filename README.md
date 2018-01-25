@@ -166,12 +166,11 @@ the attribute `data-ecom-list` and implement a
   <h4> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
-      <div class="_ecom-el" data-ecom-type="product" v-bind:data-ecom-id="product._id">
-        <h3> {{ product.name }} </h3>
-        <p class="price"> {{ product.currency_symbol }} {{ product.price }} </p>
-        <p class="sku"> Code: {{ product.sku }} </p>
-        <button class="buy"> Buy </button>
-      </div>
+      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
+      <h3> {{ product.name }} </h3>
+      <p class="price"> {{ product.currency_symbol }} {{ EcomStore.formatMoney(product.price) }} </p>
+      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
+      <div class="no-stock" v-else> Out of stock </div>
     </li>
   </ul>
 </div>
