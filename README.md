@@ -9,6 +9,8 @@
         * [Object types](#object-types)
         * [Basic product samples](#basic-product-samples)
 
+{% raw %}
+
 # Introduction
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
@@ -80,6 +82,8 @@ represent an object declaration, preceded of a GET request to
 
 The `._ecom-el` elements must also have the attributes below:
 
+| Attribute        | Description |
+| :---:            | :---: |
 | `data-ecom-o`    | Variable name, can have any value, [explanation here](#naming-objects) |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
 | `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API |
@@ -95,6 +99,8 @@ with the same properties.
 ### Object types
 Possible values for `data-ecom-type`:
 
+| Type          | Object model |
+| :---:         | :---: |
 | `product`     | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
@@ -110,8 +116,6 @@ Possible values for `data-ecom-type`:
 <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
   Object reference
 </a>
-
-{% raw %}
 
 ```html
 <div class="_ecom-el" data-ecom-o="p1" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
@@ -134,6 +138,6 @@ Possible values for `data-ecom-type`:
 </div>
 ```
 
-{% endraw %}
-
 Note that you can use similar code for other types of objects (API resources).
+
+{% endraw %}
