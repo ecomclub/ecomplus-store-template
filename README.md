@@ -10,6 +10,7 @@
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
             * [Basic product samples](#basic-product-samples)
+        * [Search API objects](#search-api-objects)
 
 {% raw %}
 
@@ -91,7 +92,7 @@ Each HTML element with class `_ecom-el` will be an
 It represents an object declaration, preceded of a REST API GET request.
 
 ### Store API objects
-_Store API objects_ are rendered with `._ecom-el` elements
+_Store API objects_ are rendered from `._ecom-el` elements
 with the attributes below:
 
 | Attribute        | Description |
@@ -109,7 +110,7 @@ is the object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
-### Object types
+#### Object types
 Possible values for `data-ecom-type`:
 
 | Type          | Object model |
@@ -125,7 +126,7 @@ Possible values for `data-ecom-type`:
 | `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 
-### Basic product samples
+#### Basic product samples
 ```html
 <div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <h3> {{ name }} </h3>
@@ -153,7 +154,7 @@ Possible values for `data-ecom-type`:
 
 Note that you can use similar code for other types of objects (API resources).
 
-### List products from collection
+#### List products from collection
 To list products of a collection you have to use
 <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list rendering</a>.
 Inside the loop you must call the method `EcomStore.el('id')` specifying
@@ -175,5 +176,9 @@ the id of the rendered HTML element (array element):
   </ul>
 </div>
 ```
+
+### Search API objects
+_Search API objects_ are rendered from `._ecom-el` elements
+with the attributes below:
 
 {% endraw %}
