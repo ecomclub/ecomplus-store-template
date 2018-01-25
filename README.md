@@ -76,7 +76,7 @@ The data is tha object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
-### Product samples
+### Basic product samples
 <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
   Object reference
 </a>
@@ -93,7 +93,7 @@ with the same properties.
 ```html
 <div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
   <div v-bind:data-sku="sku" v-if="visible">
-    <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
+    <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt"/>
     <h3> {{ name }} </h3>
     <p class="price"> {{ currency_symbol }} {{ price }} </p>
     <button v-if="quantity > min_quantity" class="buy"> Buy </button>
@@ -101,4 +101,18 @@ with the same properties.
   </div>
 </div>
 ```
+
+Note that you can use similar code for other types of objects (API resources).
+Possible object types:
+
+| `product`     |
+| `brand`       |
+| `category`    |
+| `collection`  |
+| `grid`        |
+| `customer`    |
+| `cart`        |
+| `order`       |
+| `application` |
+| `store`       |
 {% endraw %}
