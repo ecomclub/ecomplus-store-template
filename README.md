@@ -11,7 +11,7 @@ HTML attributes for layout rendering with
 [ecomplus-store-render](https://github.com/ecomclub/ecomplus-store-render)
 Vue.js app.
 
-# Getting Started
+# Getting started
 Your HTML file must include
 [Vue](https://vuejs.org/v2/),
 [Axions](https://github.com/axios/axios) http client library,
@@ -42,12 +42,27 @@ EcomStore.init()
 HTML attributes will be named with the prefix `data-ecom-`,
 mustache tags with prefix (object) `Ecom.`.
 
-## Body
-HTML body tag must have the attribute `data-ecom-store`
-with the ID of your store:
+## App main element
+Your HTML must have an element (normally a `<div>`) with class `ecom-store-app`
+and the attribute `data-ecom-store` with the ID of your store,
+it's **required**:
 
 ```html
-<body data-ecom-store="100">
-<!-- HTML CODE -->
+<div class="ecom-store-app" data-ecom-store="100">
+  <!-- HTML CODE -->
+</div>
+```
+
+All Vue template (mustache tags and Vue HTML attributes)
+must be inside this element, so probably it will be the first element inside `<body>`:
+
+```html
+<body>
+  <div class="ecom-store-app" data-ecom-store="100">
+    <!-- HTML CODE -->
+  </div>
 </body>
 ```
+
+## Attributes
+List of available HTML tags attributes:
