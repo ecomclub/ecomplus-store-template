@@ -76,14 +76,14 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 ```
 
 ### Specifying language
-If you don't want to use the store default configured language,
+If you don't want to use the store default language,
 you can use the attribute `data-ecom-lang`:
 
 ```html
 <div class="_ecom-store" data-ecom-store="100" data-ecom-lang="en_us">
 ```
 
-Use lowercase letters and separate lang of country (if specified) by underline,
+Use lowercase letters and separate lang of country (if any) by underline,
 eg.: `pt_br`, `en_us`, `it`, `es`.
 
 ## Vue instances
