@@ -78,10 +78,10 @@ with the same properties.
 
 ```html
 <div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
-  <h3>{{ name }}</h3>
-  <p class="price">{{ currency_symbol }} {{ price }}</p>
-  <p class="sku">Code: {{ sku }}</p>
-  <button class="buy">Buy</button>
+  <h3> {{ name }} </h3>
+  <p class="price"> {{ currency_symbol }} {{ price }} </p>
+  <p class="sku"> Code: {{ sku }} </p>
+  <button class="buy"> Buy </button>
 </div>
 ```
 
@@ -89,9 +89,9 @@ with the same properties.
 <div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
   <div v-bind:data-sku="sku" v-if="visible">
     <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
-    <h3>{{ name }}</h3>
-    <p class="price">{{ currency_symbol }} {{ price }}</p>
-    <button v-if="quantity > min_quantity" class="buy">Buy</button>
+    <h3> {{ name }} </h3>
+    <p class="price"> {{ currency_symbol }} {{ price }} </p>
+    <button v-if="quantity > min_quantity" class="buy"> Buy </button>
     <div class="no-stock" v-else> Out of stock </div>
   </div>
 </div>
