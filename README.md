@@ -65,8 +65,22 @@ Each HTML element with class `_ecom-app-el` will be an
 have some data attributes, `data-ecom-object` and others depending of
 object type.
 
+Inside `_ecom-app-el` elements you can use mustache tags and any
+[Vue template](https://vuejs.org/v2/guide/syntax.html) attributes.
+
+The data is tha object returned from
+[Store API](https://ecomstore.docs.apiary.io/),
+with the same properties.
+
 ### Product sample
 ```html
-<div class="_ecom-app-el" data-ecom-object="product">
+<div class="_ecom-app-el" data-ecom-object="product" data-ecom-o-id="123a5432109876543210cdef">
+  <!--
+    Object reference:
+    https://ecomstore.docs.apiary.io/#reference/products/product-object
+  -->
+  <h3>{{ name }}</h3>
+  <p class="price">{{ currency_symbol }} {{ price }}</p>
+  <p class="sku">Code: {{ sku }}</p>
 </div>
 ```
