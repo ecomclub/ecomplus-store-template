@@ -1,3 +1,4 @@
+{% raw %}
 # Introduction
 E-Com Plus storefront uses
 [Vue.js 2](https://vuejs.org/v2/guide/) framework, so
@@ -75,7 +76,7 @@ with the same properties.
 
 ```html
 <div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
-  <h3>{% raw %}{{ name }}{% endraw %}</h3>
+  <h3>{{ name }}</h3>
   <p class="price">{{ currency_symbol }} {{ price }}</p>
   <p class="sku">Code: {{ sku }}</p>
   <button class="buy">Buy</button>
@@ -93,3 +94,4 @@ with the same properties.
   </div>
 </div>
 ```
+{% endraw %}
