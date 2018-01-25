@@ -6,9 +6,10 @@
 3. [Guide](#guide)
     * [App main element](#app-main-element)
         * [Specifying language](#specifying-language)
-    * [Store API objects](#store-api-objects)
-        * [Object types](#object-types)
-        * [Basic product samples](#basic-product-samples)
+    * [Vue instances](#vue-instances)
+        * [Store API objects](#store-api-objects)
+            * [Object types](#object-types)
+            * [Basic product samples](#basic-product-samples)
 
 {% raw %}
 
@@ -73,9 +74,6 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 </body>
 ```
 
-Each `._ecom-store` element will be an
-<a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>.
-
 ### Specifying language
 If you don't want to use the store default configured language,
 you can use the attribute `data-ecom-lang`:
@@ -87,16 +85,17 @@ you can use the attribute `data-ecom-lang`:
 Use lowercase letters and separate lang of country (if specified) by underline,
 eg.: `pt_br`, `en_us`, `it`, `es`.
 
-## Store API objects
-Each HTML element with class `_ecom-el` will
-represent an object declaration, preceded of a GET request to
-<a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>.
+## Vue instances
+Each HTML element with class `_ecom-el` will be an
+<a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>.
+It represents an object declaration, preceded of a REST API GET request.
 
-The `._ecom-el` elements must also have the attributes below:
+### Store API objects
+_Store API objects_ are rendered with `._ecom-el` elements
+with the attributes below:
 
 | Attribute        | Description |
 | :---:            | :---: |
-| `data-ecom-o`    | Variable name, can have any value, [explanation here](#naming-objects) |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
 | `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API |
 
@@ -104,7 +103,9 @@ Inside `._ecom-el` elements you can use mustache tags and any
 <a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
 attributes.
 
-The data is the object returned from
+The
+<a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">instance data</a>
+is the object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
@@ -126,21 +127,21 @@ Possible values for `data-ecom-type`:
 
 ### Basic product samples
 ```html
-<div class="_ecom-el" data-ecom-o="p1" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
-  <h3> {{ p1.name }} </h3>
-  <p class="price"> {{ p1.currency_symbol }} {{ p1.price }} </p>
-  <p class="sku"> Code: {{ p1.sku }} </p>
+<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+  <h3> {{ name }} </h3>
+  <p class="price"> {{ currency_symbol }} {{ price }} </p>
+  <p class="sku"> Code: {{ sku }} </p>
   <button class="buy"> Buy </button>
 </div>
 ```
 
 ```html
-<div class="_ecom-el" data-ecom-o="p2" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
-  <div v-bind:class="'prod-' + p2.sku" v-if="p2.visible">
-    <img v-bind:src="p2.pictures[0].normal.url" v-bind:alt="p2.pictures[0].normal.alt" />
-    <h3> {{ p2.name }} </h3>
-    <p class="price"> {{ p2.currency_symbol }} {{ EcomStore.formatMoney(p2.price) }} </p>
-    <button v-if="p2.quantity > p2.min_quantity" class="buy"> Buy </button>
+<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+  <div v-bind:class="'prod-' + sku" v-if="visible">
+    <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
+    <h3> {{ name }} </h3>
+    <p class="price"> {{ currency_symbol }} {{ EcomStore.formatMoney(price) }} </p>
+    <button v-if="quantity > min_quantity" class="buy"> Buy </button>
     <div class="no-stock" v-else> Out of stock </div>
   </div>
 </div>
@@ -159,17 +160,17 @@ Inside the loop you must call the method `EcomStore.el('id')` specifying
 the id of the rendered HTML element (array element):
 
 ```html
-<div class="_ecom-el" data-ecom-o="c1" data-ecom-type="collection" data-ecom-id="c92000000000000000001111">
-  <h4> {{ c1.name }} </h3>
+<div class="_ecom-el" data-ecom-type="collection" data-ecom-id="c92000000000000000001111">
+  <h4> {{ name }} </h3>
   <ul>
-    <li v-for="(productId, index) in c1.products">
-      <div class="_ecom-el" data-ecom-o="p" data-ecom-type="product" v-bind:id="'c1p' + index" v-bind:data-ecom-id="productId">
-        <h3> {{ p.name }} </h3>
-        <p class="price"> {{ p.currency_symbol }} {{ p.price }} </p>
-        <p class="sku"> Code: {{ p.sku }} </p>
+    <li v-for="(productId, index) in products">
+      <div class="_ecom-el" data-ecom-type="product" v-bind:id="'coll-prod-' + index" v-bind:data-ecom-id="productId">
+        <h3> {{ name }} </h3>
+        <p class="price"> {{ currency_symbol }} {{ price }} </p>
+        <p class="sku"> Code: {{ sku }} </p>
         <button class="buy"> Buy </button>
       </div>
-      {{ EcomStore.el('c1p' + index) }}
+      {{ EcomStore.el('coll-prod-' + index) }}
     </li>
   </ul>
 </div>
