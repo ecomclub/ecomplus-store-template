@@ -105,15 +105,14 @@ with the same properties.
 Note that you can use similar code for other types of objects (API resources).
 Possible object types:
 
-| `product`     | <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
-  Object reference </a> |
-| `brand`       | |
-| `category`    | |
-| `collection`  | |
-| `grid`        | |
-| `customer`    | |
-| `cart`        | |
-| `order`       | |
-| `application` | |
-| `store`       | |
+| `product`     | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `collection`  | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `grid`        | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `customer`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `cart`        | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 {% endraw %}
