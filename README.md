@@ -92,7 +92,7 @@ Each HTML element with class `_ecom-el` will be an
 It represents an object declaration, preceded of a REST API GET request.
 
 ### Store API objects
-_<a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a> requests_
+<a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a> requests
 are rendered from `._ecom-el` elements
 with the attributes below:
 
@@ -179,7 +179,7 @@ the id of the rendered HTML element (array element):
 ```
 
 ### Search API objects
-_<a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests_
+<a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
 with the attributes below:
 
