@@ -5,6 +5,7 @@
 2. [Getting started](#getting-started)
 3. [Guide](#guide)
     * [App main element](#app-main-element)
+        * [Specifying language](#specifying-language)
     * [Store API objects](#store-api-objects)
         * [Object types](#object-types)
         * [Basic product samples](#basic-product-samples)
@@ -152,5 +153,26 @@ Possible values for `data-ecom-type`:
 Note that you can use similar code for other types of objects (API resources).
 
 ### List products from collection
+To list products of a collection you have to use
+<a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list rendering</a>.
+Inside the loop you must call the method `EcomStore.el('id')` specifying
+the id of the rendered HTML element (array element):
+
+```html
+<div class="_ecom-el" data-ecom-o="c1" data-ecom-type="collection" data-ecom-id="c92000000000000000001111">
+  <h4> {{ c1.name }} </h3>
+  <ul>
+    <li v-for="(productId, index) in c1.products">
+      <div class="_ecom-el" data-ecom-o="p" data-ecom-type="product" v-bind:id="'c1p' + index" v-bind:data-ecom-id="productId">
+        <h3> {{ p.name }} </h3>
+        <p class="price"> {{ p.currency_symbol }} {{ p.price }} </p>
+        <p class="sku"> Code: {{ p.sku }} </p>
+        <button class="buy"> Buy </button>
+      </div>
+      {{ EcomStore.el('c1p' + index) }}
+    </li>
+  </ul>
+</div>
+```
 
 {% endraw %}
