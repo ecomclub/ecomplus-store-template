@@ -5,19 +5,21 @@
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
 store template specifications follow the
-[Vue.js template syntax](https://vuejs.org/v2/guide/syntax.html).
+<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue.js template syntax</a>.
 
 This document is intended to list predefined mustache tags and
 HTML attributes for layout rendering with
-[ecomplus-store-render](https://github.com/ecomclub/ecomplus-store-render)
+<a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>
 Vue.js app.
 
 # Getting started
 Your HTML file must include
-[Vue](https://vuejs.org/v2/),
-[Axions](https://github.com/axios/axios) http client library,
-[storefront JS SDK](https://github.com/ecomclub/ecomplus-sdk-js)
-and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render).
+<a href="https://vuejs.org/v2/" target="_blank">Vue</a>,
+<a href="https://github.com/axios/axios" target="_blank">Axions</a>
+http client library,
+<a href="https://github.com/ecomclub/ecomplus-sdk-js" target="_blank">storefront JS SDK</a>
+and the
+<a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">layout renderer app</a>.
 You can include storefront "all in one" JS file **(recommended)**:
 
 ```html
@@ -62,19 +64,22 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 
 ## Vue instances
 Each HTML element with class `_ecom-app-el` will be an
-[Vue instance](https://vuejs.org/v2/guide/instance.html), it also must
-have some data attributes, `data-ecom-object` and others depending of
-object type.
+<a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>,
+it also must have some data attributes,
+`data-ecom-object` and others depending of object type.
 
 Inside `_ecom-app-el` elements you can use mustache tags and any
-[Vue template](https://vuejs.org/v2/guide/syntax.html) attributes.
+<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
+attributes.
 
 The data is tha object returned from
-[Store API](https://ecomstore.docs.apiary.io/),
+<a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
 ### Product samples
-[Object reference](https://ecomstore.docs.apiary.io/#reference/products/product-object)
+<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
+  Object reference
+</a>
 
 ```html
 <div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
