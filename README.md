@@ -14,13 +14,21 @@ Vue.js app.
 # Getting Started
 Your HTML file must include
 [Vue](https://vuejs.org/v2/),
-the [storefront JS SDK](https://github.com/ecomclub/ecomplus-sdk-js)
+[Axions](https://github.com/axios/axios) http client library,
+[storefront JS SDK](https://github.com/ecomclub/ecomplus-sdk-js)
 and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render):
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/sdk.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
+```
+
+All in one file **(recommended)**:
+
+```html
+<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/storefront-v1x0.min.js"></script>
 ```
 
 Then, start the layout rendering with JS below:
@@ -30,15 +38,15 @@ EcomStore.init()
 ```
 
 # Guide
-HTML attributes will be named with the prefix `ecom-`,
+HTML attributes will be named with the prefix `data-ecom-`,
 mustache tags with prefix (object) `Ecom.`.
 
 ## Body
-HTML body tag must have the attribute `ecom-store`
-with the ID of current store.
-
-Example:
+HTML body tag must have the attribute `data-ecom-store`
+with the ID of your store:
 
 ```html
-<body ecom-store="100">
+<body data-ecom-store="100">
+<!-- HTML CODE -->
+</body>
 ```
