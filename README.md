@@ -136,7 +136,7 @@ Possible values for `data-ecom-type`:
 
 <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
   Object reference
-</a>.
+</a>
 
 Note that you can use similar code for other types of objects (API resources).
 
