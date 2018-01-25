@@ -3,7 +3,7 @@
 {% raw %}
 # Introduction
 E-Com Plus storefront uses
-[Vue.js 2](https://vuejs.org/v2/guide/) framework, so
+<a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
 store template specifications follow the
 [Vue.js template syntax](https://vuejs.org/v2/guide/syntax.html).
 
