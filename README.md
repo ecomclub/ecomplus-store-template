@@ -33,4 +33,5 @@ EcomStore.init()
 ```
 
 # Guide
-All mustache tags must be named with prefix `Ecom`
+HTML attributes will be named with the prefix `ecom-`, and
+mustache tags with the prefix (object) `Ecom.`.
