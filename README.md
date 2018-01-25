@@ -105,14 +105,15 @@ with the same properties.
 Note that you can use similar code for other types of objects (API resources).
 Possible object types:
 
-| `product`     |
-| `brand`       |
-| `category`    |
-| `collection`  |
-| `grid`        |
-| `customer`    |
-| `cart`        |
-| `order`       |
-| `application` |
-| `store`       |
+| `product`     | <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
+  Object reference </a> |
+| `brand`       | |
+| `category`    | |
+| `collection`  | |
+| `grid`        | |
+| `customer`    | |
+| `cart`        | |
+| `order`       | |
+| `application` | |
+| `store`       | |
 {% endraw %}
