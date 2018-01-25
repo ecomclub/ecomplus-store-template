@@ -113,10 +113,6 @@ Possible values for `data-ecom-type`:
 | `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 
 ### Basic product samples
-<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
-  Object reference
-</a>
-
 ```html
 <div class="_ecom-el" data-ecom-o="p1" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <h3> {{ p1.name }} </h3>
@@ -137,6 +133,10 @@ Possible values for `data-ecom-type`:
   </div>
 </div>
 ```
+
+<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
+  Object reference
+</a>.
 
 Note that you can use similar code for other types of objects (API resources).
 
