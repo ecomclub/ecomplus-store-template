@@ -141,8 +141,10 @@ Possible values for `data-ecom-type`:
 ```html
 <div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <div v-bind:class="'prod-' + sku" v-if="visible">
-    <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
-    <h3> {{ name }} </h3>
+    <a v-bind:href="slug">
+      <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
+      <h3> {{ name }} </h3>
+    </a>
     <p class="price"> {{ currency_symbol }} {{ EcomStore.formatMoney(price) }} </p>
     <button v-if="quantity > min_quantity" class="buy"> Buy </button>
     <div class="no-stock" v-else> Out of stock </div>
