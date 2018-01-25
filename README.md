@@ -62,48 +62,30 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 </body>
 ```
 
-## Vue instances
-Each HTML element with class `_ecom-app-el` will be an
-<a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>,
-it also must have some data attributes,
-`data-ecom-object` and others depending of object type.
+Each `._ecom-store` element will be an
+<a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>.
 
-Inside `_ecom-app-el` elements you can use mustache tags and any
+## Store API objects
+Each HTML element with class `_ecom-el` will
+represent an object declaration, preceded of a GET request to
+<a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>.
+
+The `._ecom-el` elements must also have the attributes below:
+
+| `data-ecom-o`    | Variable name, can have any value, [explanation here](#naming-objects) |
+| `data-ecom-type` | Type of object, with one of [these values](#object-types) |
+| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API |
+
+Inside `._ecom-el` elements you can use mustache tags and any
 <a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
 attributes.
 
-The data is tha object returned from
+The data is the object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
-### Basic product samples
-<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
-  Object reference
-</a>
-
-```html
-<div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
-  <h3> {{ name }} </h3>
-  <p class="price"> {{ currency_symbol }} {{ price }} </p>
-  <p class="sku"> Code: {{ sku }} </p>
-  <button class="buy"> Buy </button>
-</div>
-```
-
-```html
-<div class="_ecom-app-el" data-ecom-object="product" data-ecom-id="123a5432109876543210cdef">
-  <div v-bind:data-sku="sku" v-if="visible">
-    <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt"/>
-    <h3> {{ name }} </h3>
-    <p class="price"> {{ currency_symbol }} {{ price }} </p>
-    <button v-if="quantity > min_quantity" class="buy"> Buy </button>
-    <div class="no-stock" v-else> Out of stock </div>
-  </div>
-</div>
-```
-
-Note that you can use similar code for other types of objects (API resources).
-Possible object types:
+### Object types
+Possible values for `data-ecom-type`:
 
 | `product`     | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
@@ -115,4 +97,32 @@ Possible object types:
 | `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
 | `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+
+### Basic product samples
+<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
+  Object reference
+</a>
+
+```html
+<div class="_ecom-el" data-ecom-o="p1" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+  <h3> {{ p1.name }} </h3>
+  <p class="price"> {{ p1.currency_symbol }} {{ p1.price }} </p>
+  <p class="sku"> Code: {{ p1.sku }} </p>
+  <button class="buy"> Buy </button>
+</div>
+```
+
+```html
+<div class="_ecom-el" data-ecom-o="p2" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+  <div v-bind:data-sku="p2.sku" v-if="p2.visible">
+    <img v-bind:src="p2.pictures[0].normal.url" v-bind:alt="p2.pictures[0].normal.alt"/>
+    <h3> {{ p2.name }} </h3>
+    <p class="price"> {{ p2.currency_symbol }} {{ formatMoney(p2.price) }} </p>
+    <button v-if="p2.quantity > p2.min_quantity" class="buy"> Buy </button>
+    <div class="no-stock" v-else> Out of stock </div>
+  </div>
+</div>
+```
+
+Note that you can use similar code for other types of objects (API resources).
 {% endraw %}
