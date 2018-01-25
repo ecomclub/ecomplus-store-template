@@ -16,19 +16,20 @@ Your HTML file must include
 [Vue](https://vuejs.org/v2/),
 [Axions](https://github.com/axios/axios) http client library,
 [storefront JS SDK](https://github.com/ecomclub/ecomplus-sdk-js)
-and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render):
+and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render).
+You can include storefront "all in one" JS file **(recommended)**:
+
+```html
+<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/storefront-v1x0.min.js"></script>
+```
+
+Or import the scripts one by one (not recommended):
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/sdk.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
-```
-
-All in one file **(recommended)**:
-
-```html
-<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/storefront-v1x0.min.js"></script>
 ```
 
 Then, start the layout rendering with JS below:
