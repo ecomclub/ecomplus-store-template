@@ -20,7 +20,7 @@ and the [layout renderer app](https://github.com/ecomclub/ecomplus-store-render)
 You can include storefront "all in one" JS file **(recommended)**:
 
 ```html
-<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/storefront-v1x0.min.js"></script>
+<script src="https://ecvol.com/js/storefront-v1x0.min.js"></script>
 ```
 
 Or import the scripts one by one (not recommended):
