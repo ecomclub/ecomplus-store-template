@@ -1,8 +1,3 @@
-# ecomplus-store-template
-Template specifications for E-Com Plus storefront
-
-https://ecomclub.github.io/ecomplus-store-template/
-
 # Introduction
 E-Com Plus storefront uses
 [Vue.js 2](https://vuejs.org/v2/guide/) framework, so
@@ -35,3 +30,8 @@ EcomStore.init()
 # Guide
 HTML attributes will be named with the prefix `ecom-`, and
 mustache tags with the prefix (object) `Ecom.`.
+
+# ecomplus-store-template
+Template specifications for E-Com Plus storefront
+
+https://ecomclub.github.io/ecomplus-store-template/
