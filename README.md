@@ -45,16 +45,11 @@ mustache tags with prefix (object) `Ecom.`.
 ## App main element
 Your HTML must have an element (normally a `<div>`) with class `ecom-store-app`
 and the attribute `data-ecom-store` with the ID of your store,
-it's **required**:
+it's **required**.
 
-```html
-<div class="ecom-store-app" data-ecom-store="100">
-  <!-- HTML CODE -->
-</div>
-```
-
-All Vue template (mustache tags and Vue HTML attributes)
-must be inside this element, so probably it will be the first element inside `<body>`:
+All Vue template must be inside this element,
+including all mustache tags and Vue HTML attributes,
+so probably it will be the first and only element inside `<body>` (but it's not a rule):
 
 ```html
 <body>
@@ -63,6 +58,3 @@ must be inside this element, so probably it will be the first element inside `<b
   </div>
 </body>
 ```
-
-## Attributes
-List of available HTML tags attributes:
