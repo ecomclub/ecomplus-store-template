@@ -16,15 +16,18 @@
 {% raw %}
 
 # Introduction
+This document is intended to list predefined mustache tags and
+HTML attributes for layout rendering with
+<a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
+
+**You can use any HTML template for E-Com Plus storefront.**
+After reading this documentation, you will be able to customize a theme,
+editing some pages or elements only, or start a new theme from scratch.
+
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
 store template specifications follow the
-<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue.js template syntax</a>.
-
-This document is intended to list predefined mustache tags and
-HTML attributes for layout rendering with
-<a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>
-Vue.js app.
+<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template syntax</a>.
 
 # Getting started
 Your HTML file must include
