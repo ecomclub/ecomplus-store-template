@@ -32,7 +32,7 @@ store template specifications follow the
 # Getting started
 Your HTML file must include
 <a href="https://vuejs.org/v2/" target="_blank">Vue</a>,
-<a href="https://github.com/axios/axios" target="_blank">Axions</a>
+<a href="https://github.com/axios/axios" target="_blank">Axios</a>
 http client library,
 <a href="https://github.com/ecomclub/ecomplus-sdk-js" target="_blank">storefront JS SDK</a>
 and the
