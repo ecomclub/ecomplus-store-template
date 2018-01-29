@@ -10,7 +10,7 @@
     * [Vue instances](#vue-instances)
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
-            * [Basic product samples](#basic-product-samples)
+            * [Basic product sample](#basic-product-sample)
             * [List products from collection](#list-products-from-collection)
         * [Search API objects](#search-api-objects)
 
@@ -135,17 +135,16 @@ Possible values for `data-ecom-type`:
 | Type          | Object model |
 | :---:         | :---: |
 | `product`     | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `collection`  | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `grid`        | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `customer`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `cart`        | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/brands/brand-object) |
+| `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/categories/category-object) |
+| `collection`  | [Reference](https://ecomstore.docs.apiary.io/#reference/collections/collection-object) |
+| `grid`        | [Reference](https://ecomstore.docs.apiary.io/#reference/grids/grid-object) |
+| `customer`    | [Reference](https://ecomstore.docs.apiary.io/#reference/customers/customer-object) |
+| `cart`        | [Reference](https://ecomstore.docs.apiary.io/#reference/carts/cart-object) |
+| `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/orders/order-object) |
+| `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/applications/application-object) |
 
-#### Basic product samples
+#### Basic product sample
 ```html
 <div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <h3> {{ name }} </h3>
