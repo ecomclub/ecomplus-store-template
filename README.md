@@ -6,6 +6,7 @@
 3. [Guide](#guide)
     * [App main element](#app-main-element)
         * [Specifying language](#specifying-language)
+        * [Specifying store](#specifying-store)
     * [Vue instances](#vue-instances)
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
@@ -66,18 +67,17 @@ HTML attributes will be named with the prefix `data-ecom-`,
 classes with prefix `_ecom-`.
 
 ## App main element
-Your HTML must have an element (normally a `<div>` or `<span>`)
+Your HTML must have an element
 with class `_ecom-store`, it's **required**.
 
 All Vue template must be inside this element,
 including all mustache tags and Vue HTML attributes,
-so probably it will be the first and only element inside `<body>` (but it's not a rule):
+so probably it will be the `<body>`, but it's not a rule, you can use
+a `<div>`, `<span>` or any other:
 
 ```html
-<body>
-  <div class="_ecom-store">
-    <!-- HTML CODE -->
-  </div>
+<body class="_ecom-store">
+  <!-- HTML CODE -->
 </body>
 ```
 
