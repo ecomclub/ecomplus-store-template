@@ -83,11 +83,11 @@ a `<div>`, `<span>` or any other:
 
 ### Specifying store
 By default, store will be defined in function of the site domain,
-but you can also use the attribute `data-ecom-store`
-with the object ID of your store:
+but you can also use the attributes `data-ecom-store` and `data-ecom-store-object`
+with your _Store ID_ and _Store Object ID_:
 
 ```html
-<div class="_ecom-store" data-ecom-store="5a674f224e0dcec2c3353d9d">
+<div class="_ecom-store" data-ecom-store="100" data-ecom-store-object="5a674f224e0dcec2c3353d9d">
 ```
 
 It's useful if the template is designed for one specific store only,
@@ -98,7 +98,7 @@ If you don't want to use the store default language,
 you can use the attribute `data-ecom-lang`:
 
 ```html
-<div class="_ecom-store" data-ecom-store="5a674f224e0dcec2c3353d9d" data-ecom-lang="en_us">
+<div class="_ecom-store" data-ecom-lang="en_us">
 ```
 
 Use lowercase letters and separate lang of country (if any) by underline,
