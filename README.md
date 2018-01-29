@@ -177,9 +177,8 @@ The example below is a simple implementation of a product page:
 </div>
 ```
 
-<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">
-  Object reference
-</a>
+Vue data (inside mustache tags and `v-*` attributes) follows this
+<a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">object reference</a>.
 
 Note that you can use similar code for other types of objects (API resources).
 
