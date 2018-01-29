@@ -67,8 +67,8 @@ EcomStore.init()
 ```
 
 # Guide
-HTML attributes will be named with the prefix `data-ecom-`,
-classes with prefix `_ecom-`.
+HTML classes will be named with the prefix `_ecom-`,
+data attributes may be used together with the classes.
 
 ## App main element
 Your HTML must have an element
@@ -87,11 +87,11 @@ a `<div>`, `<span>` or any other:
 
 ### Specifying store
 By default, store will be defined in function of the site domain,
-but you can also use the attributes `data-ecom-store` and `data-ecom-id`
+but you can also use the attributes `data-store` and `data-id`
 with your _Store ID_ and _Store Object ID_ respectively:
 
 ```html
-<div class="_ecom-store" data-ecom-store="100" data-ecom-id="5a674f224e0dcec2c3353d9d">
+<div class="_ecom-store" data-store="100" data-id="5a674f224e0dcec2c3353d9d">
 ```
 
 It's useful if the template is designed for one specific store only,
@@ -99,10 +99,10 @@ or if you want to work with multiple stores in the same storefront.
 
 ### Specifying language
 If you don't want to use the store default language,
-you can use the attribute `data-ecom-lang`:
+you can use the attribute `data-lang`:
 
 ```html
-<div class="_ecom-store" data-ecom-lang="en_us">
+<div class="_ecom-store" data-lang="en_us">
 ```
 
 Use lowercase letters and separate lang of country (if any) by underline,
@@ -124,13 +124,13 @@ with the attributes below:
 
 | Attribute        | Description |
 | :---:            | :---: |
-| `data-ecom-type` | Type of object, with one of [these values](#object-types) |
-| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API _(optional)_ |
+| `data-type` | Type of object, with one of [these values](#object-types) |
+| `data-id`   | API Object ID, the `_id` of the object you are getting from the API _(optional)_ |
 
 In almost all cases, you will not create an HTML for each object,
 for example, you will create only one HTML file for all products,
 not one per product.
-In these cases it's not possible to specify `data-ecom-id` (it's dynamic),
+In these cases it's not possible to specify `data-id` (it's dynamic),
 let the element without this attribute,
 it will be defined in function of page URL (slug).
 
@@ -141,7 +141,7 @@ will be the object returned from
 with the same properties.
 
 #### Object types
-Possible values for `data-ecom-type`:
+Possible values for `data-type`:
 
 | Type          | Object model |
 | :---:         | :---: |
@@ -159,7 +159,7 @@ Possible values for `data-ecom-type`:
 The example below is a simple implementation of a product page:
 
 ```html
-<div class="_ecom-el" data-ecom-type="product">
+<div class="_ecom-el" data-type="product">
   <div v-bind:class="'prod-' + sku" v-if="visible">
     <ul>
       <li v-for="picture in pictures">
@@ -182,11 +182,11 @@ The example below is a simple implementation of a product page:
 ```
 
 If you are creating the HTML file for a specific product only,
-or embedding one product inside a custom page, you must set `data-ecom-id`
+or embedding one product inside a custom page, you must set `data-id`
 with product ID:
 
 ```html
-<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+<div class="_ecom-el" data-type="product" data-id="123a5432109876543210cdef">
 ```
 
 Vue data (inside mustache tags and `v-*` attributes) follows this
@@ -196,11 +196,11 @@ Note that you can use similar code for other types of objects (API resources).
 
 #### List products from collection
 To list products of a collection you have to use
-the attribute `data-ecom-list` and implement a
+the attribute `data-list` and implement a
 <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a>:
 
 ```html
-<div class="_ecom-el" data-ecom-type="collection" data-ecom-list="products,0,12" data-ecom-id="c92000000000000000001111">
+<div class="_ecom-el" data-type="collection" data-list="products,0,12" data-id="c92000000000000000001111">
   <h4> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
@@ -217,7 +217,7 @@ the attribute `data-ecom-list` and implement a
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
-with the `data-ecom-type` as `items` or `terms`,
+with the `data-type` as `items` or `terms`,
 and other attributes depending of search case.
 
 The
@@ -227,7 +227,7 @@ will be the object returned from
 with the same properties.
 
 #### Search items
-To search for products, `data-ecom-type` must be equal to `items`.
+To search for products, `data-type` must be equal to `items`.
 You can get more info and example of returned object from
 <a href="https://ecomsearch.docs.apiary.io/#reference/items" target="_blank">API reference</a>.
 
@@ -237,17 +237,17 @@ To search products (items) by name and/or keywords,
 
 | Attribute        | Description |
 | :---:            | :---: |
-| `data-ecom-type` | Equal to `items` |
-| `data-ecom-term` | Search keyword, results offset, results limit, results order |
+| `data-type` | Equal to `items` |
+| `data-term` | Search keyword, results offset, results limit, results order |
 
 ##### Search by keyword sample
 ```html
 <div class="_ecom-el"
-  data-ecom-type="items"
-  data-ecom-term="tshirt"
-  data-ecom-from="0"
-  data-ecom-size="20"
-  data-ecom-sort="0">
+  data-type="items"
+  data-term="tshirt"
+  data-from="0"
+  data-size="20"
+  data-sort="0">
 
   <h4> {{ name }} </h3>
   <ul>
