@@ -1,10 +1,10 @@
 # Store theme
 
-# Pages
+## Pages
 1. [Store theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
 
-# Summary
+## Summary
 1. [Introduction](#introduction)
 2. [Getting started](#getting-started)
 3. [Guide](#guide)
