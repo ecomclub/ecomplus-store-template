@@ -119,7 +119,12 @@ with the attributes below:
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
 | `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API (optional) |
 
-If `data-ecom-id` is not specified, it will be defined in function of page URL (slug).
+In almost all cases, you will not create an HTML for each object,
+for example, you will create only one HTML file for all products,
+not one per product.
+In these cases it's not possible to specify `data-ecom-id` (it's dynamic),
+let the element without this attribute,
+it will be defined in function of page URL (slug).
 
 Inside `._ecom-el` elements you can use mustache tags and any
 <a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
