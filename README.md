@@ -125,7 +125,7 @@ with the attributes below:
 | Attribute        | Description |
 | :---:            | :---: |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
-| `data-ecom-id`   | _(Optional)_ API Object ID, the `_id` of the object you are getting from the API |
+| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API (optional) |
 
 In almost all cases, you will not create an HTML for each object,
 for example, you will create only one HTML file for all products,
@@ -181,6 +181,14 @@ The example below is a simple implementation of a product page:
 </div>
 ```
 
+If you are creating the HTML file for a specific product only,
+or embedding one product inside a custom page, you must set `data-ecom-id`
+with product ID:
+
+```html
+<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+```
+
 Vue data (inside mustache tags and `v-*` attributes) follows this
 <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">object reference</a>.
 
@@ -229,8 +237,8 @@ To search products (items) by name and/or keywords,
 
 | Attribute          | Description |
 | :---:              | :---: |
-| `data-ecom-type`   | `items` |
-| `data-ecom-search` | _(Optional)_ Search keyword, results offset, results limit, results order |
+| `data-ecom-type`   | Equal to `items` |
+| `data-ecom-search` | Search keyword, results offset, results limit, results order |
 
 ##### Search by keyword sample
 ```html
