@@ -123,7 +123,7 @@ with the attributes below:
 | Attribute        | Description |
 | :---:            | :---: |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
-| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API (optional) |
+| `data-ecom-id`   | _(Optional)_ API Object ID, the `_id` of the object you are getting from the API |
 
 In almost all cases, you will not create an HTML for each object,
 for example, you will create only one HTML file for all products,
@@ -228,11 +228,11 @@ To search products (items) by name and/or keywords,
 | Attribute          | Description |
 | :---:              | :---: |
 | `data-ecom-type`   | `items` |
-| `data-ecom-search` | Term (keyword) string |
+| `data-ecom-search` | _(Optional)_ Search keyword, results offset, results limit, results order |
 
 ##### Search by keyword sample
 ```html
-<div class="_ecom-el" data-ecom-type="items" data-ecom-search="tshirt">
+<div class="_ecom-el" data-ecom-type="items" data-ecom-search="tshirt,0,20,0">
   <h4> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
