@@ -132,7 +132,7 @@ attributes.
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">instance data</a>
-is the object returned from
+will be the object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
@@ -205,24 +205,36 @@ the attribute `data-ecom-list` and implement a
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
-with the `data-ecom-type` as `items` or `terms`.
+with the `data-ecom-type` with value `items` or `terms`.
 
 #### Search items
-To search products (items), `data-ecom-type` must be equal to `items`.
+To search products, `data-ecom-type` must be equal to `items`.
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">Vue instance data</a>
-is an object with property `hits`, the same array as returned from
-<a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a>.
+will be an object with property `hits`, the list (array) of search results.
 
-Each element of `hits` array is an object with properties
-`_id` and `_source` (and others).
-The `_id` is the product object ID, and `_source` is an item object,
-similar to the product object, but with less properties,
-following this
-<a href="https://ecomsearch.docs.apiary.io/#reference/products/product-object" target="_blank">object reference</a>.
+##### Item object
+Each element of `hits` array is an object
+similar to the product object, but with less properties:
 
-#### Find products by name and keywords
+| Property            | Type      | Description |
+| :---:               | :---:     | :---: |
+| `_id`               | `string`  | Product object ID |
+| `sku`               | `string`  | Product object ID |
+| `name`              | `string`  | Product object ID |
+| `slug`              | `string`  | Product object ID |
+| `permalink`         | `string`  | Product object ID |
+| `mobile_link`       | `string`  | Product object ID |
+| `status`            | `string`  | Product object ID |
+| `available`         | `boolean` | Product object ID |
+| `visible`           | `boolean` | Product object ID |
+| `ad_relevance`      | `integer` | Product object ID |
+| `ad_type`           | `string`  | Product object ID |
+| `short_description` | `string`  | Product object ID |
+| `price`             | `number`  | Product object ID |
+
+##### Find products by name and keywords
 To search products (items) by name and/or keywords,
 `._ecom-el` element must have the attributes below:
 
