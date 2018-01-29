@@ -67,8 +67,8 @@ EcomStore.init()
 ```
 
 # Guide
-HTML classes will be named with the prefix `_ecom-`,
-data attributes may be used together with the classes.
+HTML classes used by this library will be named with the prefix `_ecom-`,
+data attributes may be used together with the classes in the elements.
 
 ## App main element
 Your HTML must have an element
