@@ -109,6 +109,10 @@ Each HTML element with class `_ecom-el` will be an
 <a href="https://vuejs.org/v2/guide/instance.html" target="_blank">Vue instance</a>.
 It represents an object declaration, preceded of a REST API GET request.
 
+Inside `._ecom-el` elements you can use mustache tags and any
+<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
+attributes.
+
 ### Store API objects
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a> requests
 are rendered from `._ecom-el` elements
@@ -125,10 +129,6 @@ not one per product.
 In these cases it's not possible to specify `data-ecom-id` (it's dynamic),
 let the element without this attribute,
 it will be defined in function of page URL (slug).
-
-Inside `._ecom-el` elements you can use mustache tags and any
-<a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
-attributes.
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">instance data</a>
@@ -205,36 +205,21 @@ the attribute `data-ecom-list` and implement a
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
-with the `data-ecom-type` with value `items` or `terms`.
-
-#### Search items
-To search products, `data-ecom-type` must be equal to `items`.
+with the `data-ecom-type` as `items` or `terms`,
+and other attributes depending of search case.
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">Vue instance data</a>
-will be an object with property `hits`, the list (array) of search results.
+will be the object returned from
+<a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a>,
+with the same properties.
 
-##### Item object
-Each element of `hits` array is an object
-similar to the product object, but with less properties:
+#### Search items
+To search for products, `data-ecom-type` must be equal to `items`.
+You can get more info and example of returned object from
+<a href="https://ecomsearch.docs.apiary.io/#reference/items" target="_blank">API reference</a>.
 
-| Property            | Type      | Description |
-| :---:               | :---:     | :---: |
-| `_id`               | `string`  | Product object ID |
-| `sku`               | `string`  | Product object ID |
-| `name`              | `string`  | Product object ID |
-| `slug`              | `string`  | Product object ID |
-| `permalink`         | `string`  | Product object ID |
-| `mobile_link`       | `string`  | Product object ID |
-| `status`            | `string`  | Product object ID |
-| `available`         | `boolean` | Product object ID |
-| `visible`           | `boolean` | Product object ID |
-| `ad_relevance`      | `integer` | Product object ID |
-| `ad_type`           | `string`  | Product object ID |
-| `short_description` | `string`  | Product object ID |
-| `price`             | `number`  | Product object ID |
-
-##### Find products by name and keywords
+#### Find products by name and keywords
 To search products (items) by name and/or keywords,
 `._ecom-el` element must have the attributes below:
 
@@ -242,5 +227,21 @@ To search products (items) by name and/or keywords,
 | :---:              | :---: |
 | `data-ecom-type`   | `items` |
 | `data-ecom-search` | Term (keyword) string |
+
+##### Search by keyword sample
+```html
+<div class="_ecom-el" data-ecom-type="items" data-ecom-search="tshirt">
+  <h4> {{ name }} </h3>
+  <ul>
+    <li v-for="product in List">
+      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
+      <h3> {{ product.name }} </h3>
+      <p class="price"> {{ product.currency_symbol }} {{ EcomStore.formatMoney(product.price) }} </p>
+      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
+      <div class="no-stock" v-else> Out of stock </div>
+    </li>
+  </ul>
+</div>
+```
 
 {% endraw %}
