@@ -1,7 +1,7 @@
-# Store theme
+# Storefront theme
 
 ## Pages
-1. [Store theme](https://ecomclub.github.io/ecomplus-store-template/)
+1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
 
 ## Summary
