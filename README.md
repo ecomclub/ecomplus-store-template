@@ -125,7 +125,7 @@ with the attributes below:
 | Attribute        | Description |
 | :---:            | :---: |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
-| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API (optional) |
+| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API _(optional)_ |
 
 In almost all cases, you will not create an HTML for each object,
 for example, you will create only one HTML file for all products,
