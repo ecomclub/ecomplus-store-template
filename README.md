@@ -83,11 +83,11 @@ a `<div>`, `<span>` or any other:
 
 ### Specifying store
 By default, store will be defined in function of the site domain,
-but you can also use the attributes `data-ecom-store` and `data-ecom-store-object`
+but you can also use the attributes `data-ecom-store` and `data-ecom-object`
 with your _Store ID_ and _Store Object ID_:
 
 ```html
-<div class="_ecom-store" data-ecom-store="100" data-ecom-store-object="5a674f224e0dcec2c3353d9d">
+<div class="_ecom-store" data-ecom-store="100" data-ecom-object="5a674f224e0dcec2c3353d9d">
 ```
 
 It's useful if the template is designed for one specific store only,
