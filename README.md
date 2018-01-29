@@ -122,8 +122,8 @@ attributes.
 are rendered from `._ecom-el` elements
 with the attributes below:
 
-| Attribute        | Description |
-| :---:            | :---: |
+| Attribute   | Description |
+| :---:       | :---: |
 | `data-type` | Type of object, with one of [these values](#object-types) |
 | `data-id`   | API Object ID, the `_id` of the object you are getting from the API _(optional)_ |
 
@@ -132,7 +132,7 @@ for example, you will create only one HTML file for all products,
 not one per product.
 In these cases it's not possible to specify `data-id` (it's dynamic),
 let the element without this attribute,
-it will be defined in function of page URL (slug).
+ID will be defined in function of page URL (slug).
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">instance data</a>
@@ -183,7 +183,7 @@ The example below is a simple implementation of a product page:
 
 If you are creating the HTML file for a specific product only,
 or embedding one product inside a custom page, you must set `data-id`
-with product ID:
+with the product ID:
 
 ```html
 <div class="_ecom-el" data-type="product" data-id="123a5432109876543210cdef">
@@ -217,7 +217,7 @@ the attribute `data-list` and implement a
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
-with the `data-type` as `items` or `terms`,
+with the `data-type` equal to `items` or `terms`,
 and other attributes depending of search case.
 
 The
@@ -232,23 +232,17 @@ You can get more info and example of returned object from
 <a href="https://ecomsearch.docs.apiary.io/#reference/items" target="_blank">API reference</a>.
 
 #### Find products by name and keywords
-To search products (items) by name and/or keywords,
-`._ecom-el` element must have the attributes below:
+To search for products (items) by name and/or keywords,
+`._ecom-el` element must have the following attributes:
 
-| Attribute        | Description |
-| :---:            | :---: |
+| Attribute   | Description |
+| :---:       | :---: |
 | `data-type` | Equal to `items` |
 | `data-term` | Search keyword, results offset, results limit, results order |
 
 ##### Search by keyword sample
 ```html
-<div class="_ecom-el"
-  data-type="items"
-  data-term="tshirt"
-  data-from="0"
-  data-size="20"
-  data-sort="0">
-
+<div class="_ecom-el" data-type="items" data-term="tshirt" data-from="0" data-size="20" data-sort="0">
   <h4> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
@@ -259,7 +253,6 @@ To search products (items) by name and/or keywords,
       <div class="no-stock" v-else> Out of stock </div>
     </li>
   </ul>
-
 </div>
 ```
 
