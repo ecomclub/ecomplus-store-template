@@ -84,7 +84,7 @@ a `<div>`, `<span>` or any other:
 ### Specifying store
 By default, store will be defined in function of the site domain,
 but you can also use the attributes `data-ecom-store` and `data-ecom-id`
-with your _Store ID_ and _Store Object ID_:
+with your _Store ID_ and _Store Object ID_ respectively:
 
 ```html
 <div class="_ecom-store" data-ecom-store="100" data-ecom-id="5a674f224e0dcec2c3353d9d">
