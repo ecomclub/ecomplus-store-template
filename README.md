@@ -67,8 +67,7 @@ classes with prefix `_ecom-`.
 
 ## App main element
 Your HTML must have an element (normally a `<div>` or `<span>`)
-with class `_ecom-store` and the attribute `data-ecom-store`
-with the ID of your store, it's **required**.
+with class `_ecom-store`, it's **required**.
 
 All Vue template must be inside this element,
 including all mustache tags and Vue HTML attributes,
@@ -76,11 +75,23 @@ so probably it will be the first and only element inside `<body>` (but it's not 
 
 ```html
 <body>
-  <div class="_ecom-store" data-ecom-store="100">
+  <div class="_ecom-store">
     <!-- HTML CODE -->
   </div>
 </body>
 ```
+
+### Specifying store
+
+By default, the _Store ID_ will be defined in function of the site domain,
+but you can also use the attribute `data-ecom-store`
+with the ID of your store:
+
+```html
+<div class="_ecom-store" data-ecom-store="100">
+```
+
+It's useful if the template is designed for one specific store only.
 
 ### Specifying language
 If you don't want to use the store default language,
