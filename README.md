@@ -117,7 +117,9 @@ with the attributes below:
 | Attribute        | Description |
 | :---:            | :---: |
 | `data-ecom-type` | Type of object, with one of [these values](#object-types) |
-| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API |
+| `data-ecom-id`   | API Object ID, the `_id` of the object you are getting from the API (optional) |
+
+If `data-ecom-id` is not specified, it will be defined in function of page URL (slug).
 
 Inside `._ecom-el` elements you can use mustache tags and any
 <a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template</a>
@@ -145,6 +147,8 @@ Possible values for `data-ecom-type`:
 | `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/applications/application-object) |
 
 #### Basic product sample
+The example below is a simple implementation of a product page:
+
 ```html
 <div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
   <h3> {{ name }} </h3>
