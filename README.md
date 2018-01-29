@@ -155,24 +155,24 @@ Possible values for `data-ecom-type`:
 The example below is a simple implementation of a product page:
 
 ```html
-<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
-  <h3> {{ name }} </h3>
-  <p class="price"> {{ currency_symbol }} {{ price }} </p>
-  <p class="sku"> Code: {{ sku }} </p>
-  <button class="buy"> Buy </button>
-</div>
-```
-
-```html
-<div class="_ecom-el" data-ecom-type="product" data-ecom-id="123a5432109876543210cdef">
+<div class="_ecom-el" data-ecom-type="product">
   <div v-bind:class="'prod-' + sku" v-if="visible">
+    <ul>
+      <li v-for="picture in pictures">
+        <img v-bind:src="picture.big.url" v-bind:alt="picture.big.alt" v-bind:data-zoom="picture.zoom.url" />
+      </li>
+    </ul>
     <a v-bind:href="slug">
-      <img v-bind:src="pictures[0].normal.url" v-bind:alt="pictures[0].normal.alt" />
-      <h3> {{ name }} </h3>
+      <h1> {{ name }} </h1>
     </a>
     <p class="price"> {{ currency_symbol }} {{ EcomStore.formatMoney(price) }} </p>
-    <button v-if="quantity > min_quantity" class="buy"> Buy </button>
-    <div class="no-stock" v-else> Out of stock </div>
+    <div v-if="available">
+      <button v-if="quantity > min_quantity" class="buy"> Buy </button>
+      <div class="no-stock" v-else> Out of stock </div>
+    </div>
+    <div class="description">
+      {{ body_html }}
+    </div>
   </div>
 </div>
 ```
