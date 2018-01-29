@@ -91,7 +91,8 @@ with the ID of your store:
 <div class="_ecom-store" data-ecom-store="100">
 ```
 
-It's useful if the template is designed for one specific store only.
+It's useful if the template is designed for one specific store only or
+if you want to work with multiple stores in the same storefront.
 
 ### Specifying language
 If you don't want to use the store default language,
