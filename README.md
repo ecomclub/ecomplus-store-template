@@ -235,14 +235,20 @@ You can get more info and example of returned object from
 To search products (items) by name and/or keywords,
 `._ecom-el` element must have the attributes below:
 
-| Attribute          | Description |
-| :---:              | :---: |
-| `data-ecom-type`   | Equal to `items` |
-| `data-ecom-search` | Search keyword, results offset, results limit, results order |
+| Attribute        | Description |
+| :---:            | :---: |
+| `data-ecom-type` | Equal to `items` |
+| `data-ecom-term` | Search keyword, results offset, results limit, results order |
 
 ##### Search by keyword sample
 ```html
-<div class="_ecom-el" data-ecom-type="items" data-ecom-search="tshirt,0,20,0">
+<div class="_ecom-el"
+  data-ecom-type="items"
+  data-ecom-term="tshirt"
+  data-ecom-from="0"
+  data-ecom-size="20"
+  data-ecom-sort="0">
+
   <h4> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
@@ -253,6 +259,7 @@ To search products (items) by name and/or keywords,
       <div class="no-stock" v-else> Out of stock </div>
     </li>
   </ul>
+
 </div>
 ```
 
