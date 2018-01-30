@@ -267,7 +267,7 @@ with one of the values below:
 The example below is a simple implementation of a list of trending products:
 
 ```html
-<div class="row _ecom-el" data-type="items" data-size="6">
+<div class="row _ecom-el" data-type="items">
   <div class="col-md-2" v-for="item in hits.hits">
     <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
     <a v-bind:href="item.slug">
@@ -289,6 +289,21 @@ The example below is a simple implementation of a list of trending products:
 </div>
 ```
 
+It's possible to specify the maximum number of listed items with `data-size`,
+the example below will list up to 12 most popular items:
+
+```html
+<div class="_ecom-el" data-type="items" data-size="12">
+```
+
+For pagination, you should use `data-from` (offset)
+together with `data-size` (limit).
+The example below will list up to 12 items, from 24º to 36º:
+
+```html
+<div class="_ecom-el" data-type="items" data-from="24" data-size="12">
+```
+
 To find products searching by name and/or keywords, you can use `data-term`:
 
 ```html
@@ -296,18 +311,16 @@ To find products searching by name and/or keywords, you can use `data-term`:
 ```
 
 ```html
+<div class="_ecom-el" data-type="items" data-categories="f10000000000000000000001">
+```
+
+```html
+<div class="_ecom-el" data-type="items" data-brands="a10000000000000000000001">
+```
+
+```html
 <div class="_ecom-el" data-type="items"
   data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
-```
-
-```html
-<div class="_ecom-el" data-type="items"
-  data-categories="f10000000000000000000001">
-```
-
-```html
-<div class="_ecom-el" data-type="items"
-  data-brands="a10000000000000000000001">
 ```
 
 {% endraw %}
