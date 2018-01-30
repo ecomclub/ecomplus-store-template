@@ -261,14 +261,22 @@ with one of the values below:
 
 ##### List trending items sample
 ```html
-<div class="_ecom-el" data-type="items" data-size="12">
+<div class="row _ecom-el" data-type="items" data-size="6">
+  <div class="col-md-2" v-for="item in hits.hits">
+    <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
+    <a v-bind:href="item.slug">
+      <h3> {{ item.name }} </h3>
+    </a>
+    <p class="price"> {{ item.currency_symbol }} {{ item.price }} </p>
+    <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
+    <div class="no-stock" v-else> Out of stock </div>
+  </div>
 </div>
 ```
 
 ##### Simple items search sample
 ```html
-<div class="_ecom-el" data-type="items" data-term="tshirt" data-size="20">
-</div>
+<div class="_ecom-el" data-type="items" data-term="tshirt" data-size="24">
 ```
 
 {% endraw %}
