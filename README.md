@@ -3,7 +3,7 @@
 ## Pages
 1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [Search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+3. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
 
 ## Summary
 1. [Introduction](#introduction)
@@ -19,8 +19,7 @@
             * [List products from collection](#list-products-from-collection)
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
-              * [Sort items search result](#sort-items-search-result)
-              * [Search items samples](#search-items-samples)
+            * [Products list sample](#products-list-sample)
 
 {% raw %}
 
@@ -251,20 +250,7 @@ The `._ecom-el` element must also have the following attributes:
 | `data-price-max`  | Filter by maximum price _(optional)_ |
 | `data-spec-*`     | Filter by product specification _(optional)_ |
 
-##### Sort items search result
-
-By default, items will be ordered by popularity (number of page views),
-but you can use custom sort with `data-sort` attribute
-with one of the values below:
-
-| Enum | Description |
-| :--: | :---: |
-| `1`  | Sort by sales, products that sells more appear first |
-| `2`  | Sort by price ascending, products with lowest price appear first |
-| `3`  | Sort by price descending, products with highest price appear first |
-| `4`  | Sort by creation date, new products appear first |
-
-##### List items sample
+#### Products list sample
 The example below is a simple implementation of a list of trending products:
 
 ```html
@@ -305,6 +291,23 @@ so, from 24º to 36º:
 <div class="_ecom-el" data-type="items" data-from="24" data-size="12">
 ```
 
+##### Sort items search result
+
+By default, items will be ordered by popularity (number of page views),
+but you can use custom sort with `data-sort` attribute
+with one of the values below:
+
+| Enum | Description |
+| :--: | :---: |
+| `1`  | Sort by sales, products that sells more appear first |
+| `2`  | Sort by price ascending, products with lowest price appear first |
+| `3`  | Sort by price descending, products with highest price appear first |
+| `4`  | Sort by creation date, new products appear first |
+
+```html
+<div class="_ecom-el" data-type="items" data-sort="1">
+```
+
 #### Search products by keyword
 
 To find products searching by name and/or keywords, you can use `data-term`:
@@ -316,18 +319,17 @@ To find products searching by name and/or keywords, you can use `data-term`:
 <a href="https://ecomclub.github.io/ecomplus-store-template/search/">Here</a>
 you can check an complete example of store search engine implementation.
 
-#### List items from category
+#### List items from category or brand
 
 To list products from specific categories you should use
 `data-categories` attribute.
+
 Following example will list items from one category only, but you can
 specify more than one by separating categories IDs with `,` (comma):
 
 ```html
 <div class="_ecom-el" data-type="items" data-categories="f10000000000000000000001">
 ```
-
-#### List items from brand
 
 Similar to categories, you can list products from specific brands using
 `data-brands` attribute:
@@ -336,7 +338,10 @@ Similar to categories, you can list products from specific brands using
 <div class="_ecom-el" data-type="items" data-brands="a10000000000000000000001">
 ```
 
-Listing specific products by IDs:
+#### List of specific products
+
+You can also list specific items using the `data-ids` attribute, where
+you should put the IDs of respective products separated by comma:
 
 ```html
 <div class="_ecom-el" data-type="items"
