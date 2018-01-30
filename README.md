@@ -294,12 +294,13 @@ so, from 24º to 36º:
 ##### Sort items search result
 
 By default, items will be ordered by popularity (number of page views),
-but you can use custom sort with `data-sort` attribute
-with one of the values below:
+but you can use custom sort with `data-sort` attribute:
 
 ```html
 <div class="_ecom-el" data-type="items" data-sort="1">
 ```
+
+It must have one of the values below:
 
 | Enum | Description |
 | :--: | :---: |
