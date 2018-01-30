@@ -226,27 +226,44 @@ will be the object returned from
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a>,
 with the same properties.
 
-#### Search items
-To search for products, `data-type` must be equal to `items`.
+#### List items
+To list products, `data-type` must be equal to `items`.
 You can get more info and example of returned object from
 <a href="https://ecomsearch.docs.apiary.io/#reference/items" target="_blank">API reference</a>.
 
-#### Find products by name and keywords
-To search for products (items) by name and/or keywords,
-`._ecom-el` element must have the following attributes:
+The `._ecom-el` element must also have the following attributes:
 
 | Attribute         | Description |
 | :---:             | :---: |
 | `data-type`       | Equal to `items` |
-| `data-term`       | Searched keyword |
+| `data-term`       | Searched keyword _(optional)_ |
 | `data-from`       | Results offset number _(optional)_ |
 | `data-size`       | Maximum number of results _(optional)_ |
-| `data-sort`       | Results ordering, one of [these enumered values](#) _(optional)_ |
+| `data-sort`       | Results ordering, one of [these enumered values](#sort-items-search-result) _(optional)_ |
 | `data-brands`     | Filter by list of brands separated by `,` _(optional)_ |
 | `data-categories` | Filter by list of categories separated by `,` _(optional)_ |
 | `data-price-min`  | Filter by minimum price _(optional)_ |
 | `data-price-max`  | Filter by maximum price _(optional)_ |
 | `data-spec-*`     | Filter by product specification _(optional)_ |
+
+##### Sort items search result
+
+By default items will be ordered by popularity (number of page views),
+but you can use custom sort with `data-sort` attribute
+with one of the values below:
+
+| Enum | Description |
+| :--: | :---: |
+| `1`  | Sort by sales, products that sells more will appear first |
+| `2`  | Sort by price ascending, products with lowest price will appear first |
+| `3`  | Sort by price descending, products with highest price will appear first |
+| `4`  | Sort by creation date, new products appear first |
+
+##### List trending items sample
+```html
+<div class="_ecom-el" data-type="items" data-size="12">
+</div>
+```
 
 ##### Simple items search sample
 ```html
