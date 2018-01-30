@@ -3,7 +3,8 @@
 ## Pages
 1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+3. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
+4. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
 
 ## Summary
 1. [Introduction](#introduction)
@@ -16,19 +17,21 @@
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
             * [Basic product sample](#basic-product-sample)
-            * [List products from collection](#list-products-from-collection)
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
             * [Products list sample](#products-list-sample)
             * [Search products by keyword](#search-products-by-keyword)
             * [List items from category or brand](#list-items-from-category-or-brand)
             * [List of specific products](#list-of-specific-products)
+        * [List products from collection](#list-products-from-collection)
 
 {% raw %}
 
 # Introduction
 This document is intended to list predefined mustache tags,
-HTML classes and attributes, and JavaScript methods for layout rendering with
+HTML classes and attributes, and
+<a href="https://ecomclub.github.io/ecomplus-store-template/methods/">JavaScript methods</a>
+(functions) for layout rendering with
 <a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
 
 **It's possible use any HTML template for E-Com Plus storefront.**
@@ -200,26 +203,6 @@ Vue data (inside mustache tags and `v-*` attributes) follows this
 
 Note that you can use similar code for other types of objects (API resources).
 
-#### List products from collection
-To list products of a collection you have to use
-the attribute `data-list` and implement a
-<a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a>:
-
-```html
-<div class="_ecom-el" data-type="collection" data-list="products,0,12" data-id="c92000000000000000001111">
-  <h3> {{ name }} </h3>
-  <ul>
-    <li v-for="product in List">
-      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
-      <h3> {{ product.name }} </h3>
-      <p class="price"> {{ product.currency_symbol }} {{ formatMoney(product.price) }} </p>
-      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
-      <div class="no-stock" v-else> Out of stock </div>
-    </li>
-  </ul>
-</div>
-```
-
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
@@ -254,7 +237,8 @@ The `._ecom-el` element must also have the following attributes:
 | `data-spec-*`     | Filter by product specification _(optional)_ |
 
 #### Products list sample
-The example below is a simple implementation of a list of trending products:
+The example below is a simple implementation of a list of trending products,
+using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a>:
 
 ```html
 <div class="row _ecom-el" data-type="items">
@@ -362,5 +346,26 @@ you should put the IDs of respective products separated by comma:
 
 Note that you can combine the attributes from all above
 search and list examples to fit your needs.
+
+### List products from collection
+To list products of a collection you have to use both
+[Store API](#store-api-objects) and [Search API](#search-api-objects).
+
+The notation is such as the example below:
+
+```html
+<div class="_ecom-el" data-type="collection" data-id="c92000000000000000001111" data-list="products" data-size="12">
+  <h3> {{ name }} </h3>
+  <ul>
+    <li v-for="product in List">
+      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
+      <h3> {{ product.name }} </h3>
+      <p class="price"> {{ product.currency_symbol }} {{ formatMoney(product.price) }} </p>
+      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
+      <div class="no-stock" v-else> Out of stock </div>
+    </li>
+  </ul>
+</div>
+```
 
 {% endraw %}
