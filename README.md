@@ -296,9 +296,9 @@ the example below will list up to 12 most popular items:
 <div class="_ecom-el" data-type="items" data-size="12">
 ```
 
-For pagination, you should use `data-from` (offset)
-together with `data-size` (limit).
-The example below will list up to 12 items, from 24º to 36º:
+For pagination, you should use data-from (offset) together with data-size (limit).
+The example below will list up to 12 items, starting from the 24º,
+so, from 24º to 36º:
 
 ```html
 <div class="_ecom-el" data-type="items" data-from="24" data-size="12">
@@ -310,13 +310,19 @@ To find products searching by name and/or keywords, you can use `data-term`:
 <div class="_ecom-el" data-type="items" data-term="tshirt">
 ```
 
+Listing products from category:
+
 ```html
 <div class="_ecom-el" data-type="items" data-categories="f10000000000000000000001">
 ```
 
+Listing products from brand:
+
 ```html
 <div class="_ecom-el" data-type="items" data-brands="a10000000000000000000001">
 ```
+
+Listing specific products by IDs:
 
 ```html
 <div class="_ecom-el" data-type="items"
