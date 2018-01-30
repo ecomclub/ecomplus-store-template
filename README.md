@@ -201,7 +201,7 @@ the attribute `data-list` and implement a
 
 ```html
 <div class="_ecom-el" data-type="collection" data-list="products,0,12" data-id="c92000000000000000001111">
-  <h4> {{ name }} </h3>
+  <h3> {{ name }} </h3>
   <ul>
     <li v-for="product in List">
       <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
@@ -238,21 +238,14 @@ To search for products (items) by name and/or keywords,
 | Attribute   | Description |
 | :---:       | :---: |
 | `data-type` | Equal to `items` |
-| `data-term` | Search keyword, results offset, results limit, results order |
+| `data-term` | Searched keyword |
+| `data-from` | Results offset number _(optional)_ |
+| `data-size` | Maximum number of results _(optional)_ |
+| `data-sort` | Results ordering, one of [these enumered values](#) _(optional)_ |
 
-##### Search by keyword sample
+##### Simple items search sample
 ```html
-<div class="_ecom-el" data-type="items" data-term="tshirt" data-from="0" data-size="20" data-sort="0">
-  <h4> {{ name }} </h3>
-  <ul>
-    <li v-for="product in List">
-      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
-      <h3> {{ product.name }} </h3>
-      <p class="price"> {{ product.currency_symbol }} {{ EcomStore.formatMoney(product.price) }} </p>
-      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
-      <div class="no-stock" v-else> Out of stock </div>
-    </li>
-  </ul>
+<div class="_ecom-el" data-type="items" data-term="tshirt" data-size="20">
 </div>
 ```
 
