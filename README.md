@@ -19,7 +19,7 @@
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
               * [Sort items search result](#sort-items-search-result)
-              * [Search and list items samples](#search-and-list-items-samples)
+              * [Search items samples](#search-items-samples)
 
 {% raw %}
 
@@ -263,7 +263,7 @@ with one of the values below:
 | `3`  | Sort by price descending, products with highest price appear first |
 | `4`  | Sort by creation date, new products appear first |
 
-##### Search and list items samples
+##### Search items samples
 
 
 ```html
