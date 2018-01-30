@@ -360,7 +360,7 @@ you should put the IDs of respective products separated by comma:
 <div class="_ecom-el" data-type="items" data-ids="1234567890abcdef01291510,1234567890abcdef01291511">
 ```
 
-> Note that you can combine the attributes from all above
+Note that you can combine the attributes from all above
 search and list examples to fit your needs.
 
 {% endraw %}
