@@ -348,8 +348,7 @@ You can also list specific items using the `data-ids` attribute, where
 you should put the IDs of respective products separated by comma:
 
 ```html
-<div class="_ecom-el" data-type="items"
-  data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
+<div class="_ecom-el" data-type="items" data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
 ```
 
 {% endraw %}
