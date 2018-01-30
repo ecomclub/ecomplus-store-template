@@ -17,6 +17,9 @@
             * [Basic product sample](#basic-product-sample)
             * [List products from collection](#list-products-from-collection)
         * [Search API objects](#search-api-objects)
+            * [List items](#list-items)
+              * [Sort items search result](#sort-items-search-result)
+              * [Search and list items samples](#search-and-list-items-samples)
 
 {% raw %}
 
@@ -260,7 +263,9 @@ with one of the values below:
 | `3`  | Sort by price descending, products with highest price appear first |
 | `4`  | Sort by creation date, new products appear first |
 
-##### List trending items sample
+##### Search and list items samples
+
+
 ```html
 <div class="row _ecom-el" data-type="items" data-size="6">
   <div class="col-md-2" v-for="item in hits.hits">
@@ -285,24 +290,20 @@ with one of the values below:
 </div>
 ```
 
-##### Simple search by name and keywords
 ```html
 <div class="_ecom-el" data-type="items" data-term="tshirt" data-size="24">
 ```
 
-##### List specific products
 ```html
 <div class="_ecom-el" data-type="items" data-sort="1"
   data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
 ```
 
-##### List category items
 ```html
 <div class="_ecom-el" data-type="items" data-size="12" data-sort="4"
   data-categories="f10000000000000000000001">
 ```
 
-##### List brand items
 ```html
 <div class="_ecom-el" data-type="items"
   data-brands="a10000000000000000000001">
