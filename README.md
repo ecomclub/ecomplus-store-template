@@ -24,8 +24,8 @@
 {% raw %}
 
 # Introduction
-This document is intended to list predefined mustache tags and
-HTML attributes for layout rendering with
+This document is intended to list predefined mustache tags,
+HTML classes and attributes, and JavaScript methods for layout rendering with
 <a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
 
 **It's possible use any HTML template for E-Com Plus storefront.**
@@ -264,7 +264,7 @@ with one of the values below:
 | `4`  | Sort by creation date, new products appear first |
 
 ##### Search items samples
-
+The example below is a simple implementation of a list of trending products:
 
 ```html
 <div class="row _ecom-el" data-type="items" data-size="6">
@@ -280,8 +280,7 @@ with one of the values below:
         <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
       </span>
       <span v-else>
-        {{ item.currency_symbol }}
-        <strong class="price"> {{ formatMoney(price()) }} </strong>
+        {{ item.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
       </span>
     </p>
     <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
@@ -290,17 +289,19 @@ with one of the values below:
 </div>
 ```
 
+To find products searching by name and/or keywords, you can use `data-term`:
+
 ```html
-<div class="_ecom-el" data-type="items" data-term="tshirt" data-size="24">
+<div class="_ecom-el" data-type="items" data-term="tshirt">
 ```
 
 ```html
-<div class="_ecom-el" data-type="items" data-sort="1"
+<div class="_ecom-el" data-type="items"
   data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
 ```
 
 ```html
-<div class="_ecom-el" data-type="items" data-size="12" data-sort="4"
+<div class="_ecom-el" data-type="items"
   data-categories="f10000000000000000000001">
 ```
 
