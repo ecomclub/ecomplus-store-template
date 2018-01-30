@@ -169,7 +169,7 @@ The example below is a simple implementation of a product page:
     <a v-bind:href="slug">
       <h1> {{ name }} </h1>
     </a>
-    <p class="price"> {{ currency_symbol }} {{ EcomStore.formatMoney(price) }} </p>
+    <p class="price"> {{ currency_symbol }} {{ formatMoney(price) }} </p>
     <div v-if="available">
       <button v-if="quantity > min_quantity" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
@@ -206,7 +206,7 @@ the attribute `data-list` and implement a
     <li v-for="product in List">
       <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
       <h3> {{ product.name }} </h3>
-      <p class="price"> {{ product.currency_symbol }} {{ EcomStore.formatMoney(product.price) }} </p>
+      <p class="price"> {{ product.currency_symbol }} {{ formatMoney(product.price) }} </p>
       <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
     </li>
@@ -240,8 +240,8 @@ The `._ecom-el` element must also have the following attributes:
 | `data-from`       | Results offset number _(optional)_ |
 | `data-size`       | Maximum number of results _(optional)_ |
 | `data-sort`       | Results ordering, one of [these enumered values](#sort-items-search-result) _(optional)_ |
-| `data-brands`     | Filter by list of brands separated by `,` _(optional)_ |
-| `data-categories` | Filter by list of categories separated by `,` _(optional)_ |
+| `data-brands`     | Filter by list of brands names separated by `,` _(optional)_ |
+| `data-categories` | Filter by list of categories names separated by `,` _(optional)_ |
 | `data-price-min`  | Filter by minimum price _(optional)_ |
 | `data-price-max`  | Filter by maximum price _(optional)_ |
 | `data-spec-*`     | Filter by product specification _(optional)_ |
@@ -265,18 +265,38 @@ with one of the values below:
   <div class="col-md-2" v-for="item in hits.hits">
     <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
     <a v-bind:href="item.slug">
-      <h3> {{ item.name }} </h3>
+      <h3> {{ name() }} </h3>
     </a>
-    <p class="price"> {{ item.currency_symbol }} {{ item.price }} </p>
+    <p class="price-block">
+      <span v-if="onPromotion()">
+        {{ item.currency_symbol }}
+        <strong class="price"> {{ formatMoney(item.price) }} </strong>
+        <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
+      </span>
+      <span v-else>
+        {{ item.currency_symbol }}
+        <strong class="price"> {{ formatMoney(price()) }} </strong>
+      </span>
+    </p>
     <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
-    <div class="no-stock" v-else> Out of stock </div>
+    <span class="no-stock" v-else> Out of stock </span>
   </div>
 </div>
 ```
 
-##### Simple items search sample
+##### Simple search by name and keywords
 ```html
 <div class="_ecom-el" data-type="items" data-term="tshirt" data-size="24">
+```
+
+##### List items from category
+```html
+<div class="_ecom-el" data-type="items" data-categories="Polo Shirts" data-size="12" data-sort="4">
+```
+
+##### List items from brand
+```html
+<div class="_ecom-el" data-type="items" data-brands="Shirts Example" data-size="12">
 ```
 
 {% endraw %}
