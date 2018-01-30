@@ -241,8 +241,8 @@ The `._ecom-el` element must also have the following attributes:
 | `data-size`       | Maximum number of results _(optional)_ |
 | `data-sort`       | Results ordering, one of [these enumered values](#sort-items-search-result) _(optional)_ |
 | `data-ids`        | Filter by specific products IDs separated by `,` _(optional)_ |
-| `data-brands`     | Filter by list of brands slugs separated by `,` _(optional)_ |
-| `data-categories` | Filter by list of categories slugs separated by `,` _(optional)_ |
+| `data-brands`     | Filter by list of brands IDs separated by `,` _(optional)_ |
+| `data-categories` | Filter by list of categories IDs separated by `,` _(optional)_ |
 | `data-price-min`  | Filter by minimum price _(optional)_ |
 | `data-price-max`  | Filter by maximum price _(optional)_ |
 | `data-spec-*`     | Filter by product specification _(optional)_ |
@@ -290,14 +290,22 @@ with one of the values below:
 <div class="_ecom-el" data-type="items" data-term="tshirt" data-size="24">
 ```
 
+##### List specific products
+```html
+<div class="_ecom-el" data-type="items" data-sort="1"
+  data-ids="1234567890abcdef01291510,1234567890abcdef01291511,1234567890abcdef01291512">
+```
+
 ##### List category items
 ```html
-<div class="_ecom-el" data-type="items" data-categories="Polo Shirts" data-size="12" data-sort="4">
+<div class="_ecom-el" data-type="items" data-size="12" data-sort="4"
+  data-categories="f10000000000000000000001">
 ```
 
 ##### List brand items
 ```html
-<div class="_ecom-el" data-type="items" data-brands="Shirts Example">
+<div class="_ecom-el" data-type="items"
+  data-brands="a10000000000000000000001">
 ```
 
 {% endraw %}
