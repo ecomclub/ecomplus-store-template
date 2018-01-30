@@ -257,8 +257,10 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
         {{ item.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
       </span>
     </p>
-    <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
-    <span class="no-stock" v-else> Out of stock </span>
+    <span v-if="item.available">
+      <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
+      <span class="no-stock" v-else> Out of stock </span>
+    </span>
   </div>
 </div>
 ```
@@ -355,14 +357,28 @@ The notation is such as the example below:
 
 ```html
 <div class="_ecom-el" data-type="collection" data-id="c92000000000000000001111" data-list="products" data-size="12">
-  <h3> {{ name }} </h3>
+  <a v-bind:href="slug">
+    <h3 class="coll-name"> {{ name }} </h3>
+  </a>
   <ul>
-    <li v-for="product in List">
-      <img v-bind:src="product.pictures[0].normal.url" v-bind:alt="product.pictures[0].normal.alt" />
-      <h3> {{ product.name }} </h3>
-      <p class="price"> {{ product.currency_symbol }} {{ formatMoney(product.price) }} </p>
-      <button v-if="product.quantity > product.min_quantity" class="buy"> Buy </button>
-      <div class="no-stock" v-else> Out of stock </div>
+    <li v-for="item in hits.hits">
+      <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
+      <a v-bind:href="item.slug">
+        <h4> {{ name() }} </h4>
+      </a>
+      <p> SKU: {{ item.sku }} </p>
+      <p class="price-block">
+        <span v-if="onPromotion()">
+          {{ item.currency_symbol }}
+          <strong class="price"> {{ formatMoney(item.price) }} </strong>
+          <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
+        </span>
+        <span v-else>
+          {{ item.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
+        </span>
+      </p>
+      <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
+      <span class="no-stock" v-else> Out of stock </span>
     </li>
   </ul>
 </div>
