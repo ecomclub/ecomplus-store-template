@@ -235,13 +235,18 @@ You can get more info and example of returned object from
 To search for products (items) by name and/or keywords,
 `._ecom-el` element must have the following attributes:
 
-| Attribute   | Description |
-| :---:       | :---: |
-| `data-type` | Equal to `items` |
-| `data-term` | Searched keyword |
-| `data-from` | Results offset number _(optional)_ |
-| `data-size` | Maximum number of results _(optional)_ |
-| `data-sort` | Results ordering, one of [these enumered values](#) _(optional)_ |
+| Attribute         | Description |
+| :---:             | :---: |
+| `data-type`       | Equal to `items` |
+| `data-term`       | Searched keyword |
+| `data-from`       | Results offset number _(optional)_ |
+| `data-size`       | Maximum number of results _(optional)_ |
+| `data-sort`       | Results ordering, one of [these enumered values](#) _(optional)_ |
+| `data-brands`     | Filter by list of brands separated by `,` _(optional)_ |
+| `data-categories` | Filter by list of categories separated by `,` _(optional)_ |
+| `data-price-min`  | Filter by minimum price _(optional)_ |
+| `data-price-max`  | Filter by maximum price _(optional)_ |
+| `data-spec-*`     | Filter by product specification _(optional)_ |
 
 ##### Simple items search sample
 ```html
