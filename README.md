@@ -300,7 +300,7 @@ but you can use custom sort with `data-sort` attribute:
 <div class="_ecom-el" data-type="items" data-sort="1">
 ```
 
-It must have one of the values below:
+It must have one of the number values below:
 
 | Enum | Description |
 | :--: | :---: |
