@@ -297,16 +297,16 @@ By default, items will be ordered by popularity (number of page views),
 but you can use custom sort with `data-sort` attribute
 with one of the values below:
 
+```html
+<div class="_ecom-el" data-type="items" data-sort="1">
+```
+
 | Enum | Description |
 | :--: | :---: |
 | `1`  | Sort by sales, products that sells more appear first |
 | `2`  | Sort by price ascending, products with lowest price appear first |
 | `3`  | Sort by price descending, products with highest price appear first |
 | `4`  | Sort by creation date, new products appear first |
-
-```html
-<div class="_ecom-el" data-type="items" data-sort="1">
-```
 
 #### Search products by keyword
 
