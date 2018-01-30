@@ -20,6 +20,9 @@
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
             * [Products list sample](#products-list-sample)
+            * [Search products by keyword](#search-products-by-keyword)
+            * [List items from category or brand](#list-items-from-category-or-brand)
+            * [List of specific products](#list-of-specific-products)
 
 {% raw %}
 
