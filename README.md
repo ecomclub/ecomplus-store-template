@@ -248,15 +248,15 @@ The `._ecom-el` element must also have the following attributes:
 
 ##### Sort items search result
 
-By default items will be ordered by popularity (number of page views),
+By default, items will be ordered by popularity (number of page views),
 but you can use custom sort with `data-sort` attribute
 with one of the values below:
 
 | Enum | Description |
 | :--: | :---: |
-| `1`  | Sort by sales, products that sells more will appear first |
-| `2`  | Sort by price ascending, products with lowest price will appear first |
-| `3`  | Sort by price descending, products with highest price will appear first |
+| `1`  | Sort by sales, products that sells more appear first |
+| `2`  | Sort by price ascending, products with lowest price appear first |
+| `3`  | Sort by price descending, products with highest price appear first |
 | `4`  | Sort by creation date, new products appear first |
 
 ##### List trending items sample
