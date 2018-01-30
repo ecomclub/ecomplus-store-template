@@ -323,6 +323,15 @@ To find products searching by name and/or keywords, you can use `data-term`:
 <a href="https://ecomclub.github.io/ecomplus-store-template/search/">Here</a>
 you can check an complete example of store search engine implementation.
 
+#### Filter items by specifications
+It's possible to filter the resultant items list by product specs,
+adding attributes of type `data-spec-*`, where the wildcard must be replaced
+by the specification (property name):
+
+```html
+<div class="_ecom-el" data-type="items" data-spec-colors="Blue" data-spec-size="M">
+```
+
 #### List items from category or brand
 
 To list products from specific categories you should use
@@ -350,5 +359,8 @@ you should put the IDs of respective products separated by comma:
 ```html
 <div class="_ecom-el" data-type="items" data-ids="1234567890abcdef01291510,1234567890abcdef01291511">
 ```
+
+Note that you can combine the attributes from all above
+search and list examples to fit your needs.
 
 {% endraw %}
