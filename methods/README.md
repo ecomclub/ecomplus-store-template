@@ -1,26 +1,12 @@
-# Pages
-1. [Index](https://ecomclub.github.io/ecomplus-store-template/)
-2. [Structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
+# JavaScript methods API
 
-# Summary
-1. [Introduction](#introduction)
-2. [Getting started](#getting-started)
-3. [Guide](#guide)
-    * [App main element](#app-main-element)
-        * [Specifying language](#specifying-language)
-        * [Specifying store](#specifying-store)
-    * [Vue instances](#vue-instances)
-        * [Store API objects](#store-api-objects)
-            * [Object types](#object-types)
-            * [Basic product sample](#basic-product-sample)
-            * [List products from collection](#list-products-from-collection)
-        * [Search API objects](#search-api-objects)
+## Pages
+1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
+2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
+3. [Theme variables](https://ecomclub.github.io/ecomplus-store-template/variables/)
+4. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
+5. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
 
 {% raw %}
-
-# Introduction
-This document is intended to list predefined mustache tags and
-HTML attributes for layout rendering with
-<a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
 
 {% endraw %}

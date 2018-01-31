@@ -1,4 +1,4 @@
-# Template structure
+# Theme variables
 
 ## Pages
 1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
