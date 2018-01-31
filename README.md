@@ -34,7 +34,7 @@ HTML classes and attributes, and
 (functions) for layout rendering with
 <a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
 
-**It's possible use any HTML template for E-Com Plus storefront.**
+**It's possible to use any HTML template for E-Com Plus storefront.**
 After reading this documentation, you will be able to customize a theme
 (editing some elements only) or start a new theme from scratch.
 
