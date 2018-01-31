@@ -393,10 +393,14 @@ The notation is such as the example below:
 </div>
 ```
 
-In these cases you must use the `data-type` and `data-id` as expected
+In these cases you must use `data-type` and `data-id` as expected
 for a [Store API object](#store-api-objects).
 You also have to use the attribute `data-list` with
 value `products`, by doing this, you will be listing the
-collection products by IDs from [Search API](#search-api-objects).
+collection products by IDs such as a [Search API object](#search-api-objects).
+
+In addition, you can use the other
+[attributes for a Search API items list](#list-items),
+such as the `data-size` used in the above example.
 
 {% endraw %}
