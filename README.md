@@ -3,8 +3,9 @@
 ## Pages
 1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
-4. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+3. [Theme variables](https://ecomclub.github.io/ecomplus-store-template/variables/)
+4. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
+5. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
 
 ## Summary
 1. [Introduction](#introduction)
@@ -39,7 +40,10 @@ After reading this documentation, you will be able to customize a theme
 (editing some elements only) or start a new theme from scratch.
 
 If you want to create a new theme from scratch, be sure to follow
-<a href="https://ecomclub.github.io/ecomplus-store-template/structure/">this template structure</a>.
+<a href="https://ecomclub.github.io/ecomplus-store-template/structure/">this template structure</a>
+and read about
+<a href="https://ecomclub.github.io/ecomplus-store-template/variables/">theme variables</a>
+to make the template customizable by the merchant.
 
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
