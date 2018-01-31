@@ -9,4 +9,16 @@
 
 {% raw %}
 
+# Introduction
+Such as with any other web static application, you are free to
+set up your own directory structure to your E-Com Plus store template,
+it should work as storefront.
+
+This document is only intended to define few file and directories names
+to make the template fully compatible with E-Com Plus dashboard tools.
+
+Before you start building your template,
+you must also read (at least) the storefront
+<a href="https://ecomclub.github.io/ecomplus-store-template/">theme specifications</a>.
+
 {% endraw %}
