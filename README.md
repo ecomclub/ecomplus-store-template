@@ -393,4 +393,10 @@ The notation is such as the example below:
 </div>
 ```
 
+In these cases you must use the `data-type` and `data-id` as expected
+for a [Store API object](#store-api-objects).
+You also have to use the attribute `data-list` with
+value `products`, by doing this, you will be listing the
+collection products by IDs from [Search API](#search-api-objects).
+
 {% endraw %}
