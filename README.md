@@ -72,7 +72,7 @@ Or import the scripts one by one (not recommended):
 Then, start the layout rendering with JS below:
 
 ```javascript
-EcomStore.init()
+Ecom.init()
 ```
 
 # Guide
@@ -178,7 +178,7 @@ The example below is a simple implementation of a product page:
     <a v-bind:href="slug">
       <h1> {{ name }} </h1>
     </a>
-    <p class="price"> {{ currency_symbol }} {{ formatMoney(price) }} </p>
+    <p class="price"> {{ currency_symbol }} {{ Ecom.formatMoney(price) }} </p>
     <div v-if="available">
       <button v-if="quantity > min_quantity" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
@@ -245,16 +245,16 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
   <div class="col-md-2" v-for="item in hits.hits">
     <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
     <a v-bind:href="item.slug">
-      <h3> {{ name() }} </h3>
+      <h3> {{ Ecom.name() }} </h3>
     </a>
     <p class="price-block">
-      <span v-if="onPromotion()">
+      <span v-if="Ecom.onPromotion()">
         {{ item.currency_symbol }}
-        <strong class="price"> {{ formatMoney(item.price) }} </strong>
-        <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
+        <strong class="price"> {{ Ecom.formatMoney(item.price) }} </strong>
+        <span class="base-price"> {{ Ecom.formatMoney(item.base_price) }} </span>
       </span>
       <span v-else>
-        {{ item.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
+        {{ item.currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
       </span>
     </p>
     <span v-if="item.available">
@@ -364,17 +364,17 @@ The notation is such as the example below:
     <li v-for="item in hits.hits">
       <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
       <a v-bind:href="item.slug">
-        <h4> {{ name() }} </h4>
+        <h4> {{ Ecom.name() }} </h4>
       </a>
       <p> SKU: {{ item.sku }} </p>
       <p class="price-block">
-        <span v-if="onPromotion()">
+        <span v-if="Ecom.onPromotion()">
           {{ item.currency_symbol }}
-          <strong class="price"> {{ formatMoney(item.price) }} </strong>
-          <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
+          <strong class="price"> {{ Ecom.formatMoney(item.price) }} </strong>
+          <span class="base-price"> {{ Ecom.formatMoney(item.base_price) }} </span>
         </span>
         <span v-else>
-          {{ item.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
+          {{ item.currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
         </span>
       </p>
       <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
