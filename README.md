@@ -176,9 +176,18 @@ The example below is a simple implementation of a product page:
       </li>
     </ul>
     <a v-bind:href="slug">
-      <h1> {{ name }} </h1>
+      <h1> {{ Ecom.name() }} </h1>
     </a>
-    <p class="price"> {{ currency_symbol }} {{ Ecom.formatMoney(price) }} </p>
+    <p class="price-block">
+      <span v-if="Ecom.onPromotion()">
+        {{ currency_symbol }}
+        <strong class="price"> {{ Ecom.formatMoney(price) }} </strong>
+        <span class="base-price"> {{ Ecom.formatMoney(base_price) }} </span>
+      </span>
+      <span v-else>
+        {{ currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
+      </span>
+    </p>
     <div v-if="available">
       <button v-if="quantity > min_quantity" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
