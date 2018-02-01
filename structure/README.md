@@ -3,9 +3,14 @@
 ## Pages
 1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
 2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [Theme variables](https://ecomclub.github.io/ecomplus-store-template/variables/)
-4. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
-5. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+3. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
+4. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+
+## Summary
+1. [Introduction](#introduction)
+2. [Basic directory tree](#basic-directory-tree)
+3. [PWA](#pwa)
+4. [Complete example](#complete-example)
 
 {% raw %}
 
@@ -43,15 +48,13 @@ Inside the `static` folder should be all non-HTML files,
 if necessary, you can also create custom folders within it.
 
 The `.rendered` and `.dist` folders
-should be left empty.
+should be **left empty**.
 
 In almost all cases, all HTML files should be
 inside the root directory, although you can create custom
 folders if necessary.
 
 # Predefined files
-
-## HTML files
 ```
 ├── index.html
 ├── _brand.html
@@ -60,7 +63,7 @@ folders if necessary.
 └── _product.html
 ```
 
-The above files are required, with the specified names.
+The **above files are required**, with the specified names.
 They have to be in the root directory.
 
 To complete the storefront app,
@@ -72,13 +75,13 @@ you should also create other HTML files, eg.:
 └── cart.html
 ```
 
-It's possible to use as many HTML files as you want.
-
-## Variables in JSON
+It's possible to use as many HTML files as you want,
+and you can choose any filenames.
 
 # PWA
-To build a
+If you want to build a
 <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank">Progressive Web App</a>
+(recommended),
 you should put `service-worker.js` on root directory (as needed)
 and `manifest.json` inside `static` folder:
 
@@ -96,7 +99,6 @@ and `manifest.json` inside `static` folder:
 │   └── scss
 ├── .dist
 ├── .rendered
-├── .variables.json
 ├── _brand.html
 ├── _category.html
 ├── _collection.html
