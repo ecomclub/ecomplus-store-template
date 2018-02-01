@@ -15,7 +15,9 @@ set up your own directory structure to your E-Com Plus store template,
 it should work as storefront.
 
 This document is only intended to define few files and directories names,
-to make the template fully compatible with E-Com Plus dashboard tools.
+to make the template fully compatible with
+<a href="https://github.com/ecomclub/dynamic-backend" target="_blank">dynamic backend</a> and
+E-Com Plus dashboard tools.
 
 Before you start building your template,
 you must also read (at least) the storefront
@@ -27,6 +29,7 @@ you must also read (at least) the storefront
 ├── .builder
 │   ├── plugins
 │   └── scss
+├── .dist
 ├── .rendered
 └── static
     ├── css
@@ -39,10 +42,15 @@ you must also read (at least) the storefront
 Inside the `static` folder should be all non-HTML files,
 if necessary, you can also create custom folders within it.
 
-The `.rendered` folder should be left empty.
+The `.rendered` and `.dist` folders
+should be left empty.
 
 In almost all cases, all HTML files should be
 inside the root directory, although you can create custom
 directories if necessary.
+
+# Predefined files
+
+## HTML files
 
 {% endraw %}
