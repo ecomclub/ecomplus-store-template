@@ -24,9 +24,9 @@ you must also read (at least) the storefront
 <a href="https://ecomclub.github.io/ecomplus-store-template/">theme specifications</a>.
 
 # Basic directory tree
-
 ```
 ├── .builder
+│   ├── html
 │   ├── plugins
 │   └── scss
 ├── .dist
@@ -47,10 +47,76 @@ should be left empty.
 
 In almost all cases, all HTML files should be
 inside the root directory, although you can create custom
-directories if necessary.
+folders if necessary.
 
 # Predefined files
 
 ## HTML files
+```
+├── index.html
+├── _brand.html
+├── _category.html
+├── _collection.html
+└── _product.html
+```
+
+The above files are required, with the specified names.
+They have to be in the root directory.
+
+To complete the storefront app,
+you should also create other HTML files, eg.:
+
+```
+├── search.html
+├── user.html
+└── cart.html
+```
+
+It's possible to use as many HTML files as you want.
+
+## Variables in JSON
+
+# PWA
+To build a
+<a href="https://developers.google.com/web/progressive-web-apps/" target="_blank">Progressive Web App</a>
+you should put `service-worker.js` on root directory (as needed)
+and `manifest.json` inside `static` folder:
+
+```
+├── service-worker.js
+└── static
+    └── manifest.json
+```
+
+# Complete example
+```
+├── .builder
+│   ├── html
+│   ├── plugins
+│   └── scss
+├── .dist
+├── .rendered
+├── .variables.json
+├── _brand.html
+├── _category.html
+├── _collection.html
+├── _product.html
+├── cart.html
+├── index.html
+├── search.html
+├── service-worker.js
+├── static
+│   ├── css
+│   │   └── app.css
+│   ├── fonts
+│   ├── img
+│   │   ├── banner.png
+│   │   └── icons
+│   │       └── favicon.png
+│   ├── js
+│   │   └── app.js
+│   └── manifest.json
+└── user.html
+```
 
 {% endraw %}
