@@ -27,11 +27,22 @@ you must also read (at least) the storefront
 ├── .builder
 │   ├── plugins
 │   └── scss
+├── .rendered
 └── static
     ├── css
     ├── fonts
     ├── img
+    │   └── icons
     └── js
 ```
+
+Inside the `static` folder should be all non-HTML files,
+if necessary, you can also create custom folders within it.
+
+The `.rendered` folder should be left empty.
+
+In almost all cases, all HTML files should be
+inside the root directory, although you can create custom
+directories if necessary.
 
 {% endraw %}
