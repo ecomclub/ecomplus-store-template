@@ -21,4 +21,17 @@ Before you start building your template,
 you must also read (at least) the storefront
 <a href="https://ecomclub.github.io/ecomplus-store-template/">theme specifications</a>.
 
+# Basic directory tree
+
+```
+├── .builder
+│   ├── plugins
+│   └── scss
+└── static
+    ├── css
+    ├── fonts
+    ├── img
+    └── js
+```
+
 {% endraw %}
