@@ -149,17 +149,17 @@ with the same properties.
 #### Object types
 Possible values for `data-type`:
 
-| Type         | Object model |
-| :---:        | :---: |
-| `product`    | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
-| `brand`      | [Reference](https://ecomstore.docs.apiary.io/#reference/brands/brand-object) |
-| `category`   | [Reference](https://ecomstore.docs.apiary.io/#reference/categories/category-object) |
-| `collection` | [Reference](https://ecomstore.docs.apiary.io/#reference/collections/collection-object) |
-| `grid`       | [Reference](https://ecomstore.docs.apiary.io/#reference/grids/grid-object) |
-| `customer`   | [Reference](https://ecomstore.docs.apiary.io/#reference/customers/customer-object) |
-| `cart`       | [Reference](https://ecomstore.docs.apiary.io/#reference/carts/cart-object) |
-| `order`      | [Reference](https://ecomstore.docs.apiary.io/#reference/orders/order-object) |
-| `store`      | [Reference](https://ecomstore.docs.apiary.io/#reference/stores/store-object) |
+| Type          | Object model |
+| :---:         | :---: |
+| `product`     | [Reference](https://ecomstore.docs.apiary.io/#reference/products/product-object) |
+| `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/brands/brand-object) |
+| `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/categories/category-object) |
+| `collection`  | [Reference](https://ecomstore.docs.apiary.io/#reference/collections/collection-object) |
+| `customer`    | [Reference](https://ecomstore.docs.apiary.io/#reference/customers/customer-object) |
+| `cart`        | [Reference](https://ecomstore.docs.apiary.io/#reference/carts/cart-object) |
+| `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/orders/order-object) |
+| `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/applications/application-object) |
+| `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/stores/store-object) |
 
 #### Basic product sample
 The example below is a simple implementation of a product page:
