@@ -55,15 +55,15 @@ and the
 You can include storefront "all in one" JS file **(recommended)**:
 
 ```html
-<script src="https://ecvol.com/js/storefront-v1x0.min.js"></script>
+<script src="https://ecvol.com/js/storefront@1/app.min.js"></script>
 ```
 
 Or import the scripts one by one (not recommended):
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/sdk.min.js"></script>
-<script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ecomplus-sdk@1/dist/sdk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ecomplus-render@1/dist/render.min.js"></script>
 ```
 
 Then, start the layout rendering with JS below:
