@@ -49,8 +49,6 @@ store template specifications follow the
 # Getting started
 Your HTML file must include
 <a href="https://vuejs.org/v2/" target="_blank">Vue</a>,
-<a href="https://github.com/axios/axios" target="_blank">Axios</a>
-http client library,
 <a href="https://github.com/ecomclub/ecomplus-sdk-js" target="_blank">storefront JS SDK</a>
 and the
 <a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">layout renderer app</a>.
@@ -64,7 +62,6 @@ Or import the scripts one by one (not recommended):
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/sdk.min.js"></script>
 <script src="https://ecom.nyc3.digitaloceanspaces.com/plus/js/renderer.min.js"></script>
 ```
