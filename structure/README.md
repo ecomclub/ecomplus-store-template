@@ -57,10 +57,10 @@ folders if necessary.
 # Predefined files
 ```
 ├── index.html
-├── _brand.html
-├── _category.html
-├── _collection.html
-└── _product.html
+├── _brands.html
+├── _categories.html
+├── _collections.html
+└── _products.html
 ```
 
 The **above files are required**, with the specified names.
@@ -99,10 +99,10 @@ and `manifest.json` inside `static` folder:
 │   └── scss
 ├── .dist
 ├── .rendered
-├── _brand.html
-├── _category.html
-├── _collection.html
-├── _product.html
+├── _brands.html
+├── _categories.html
+├── _collections.html
+├── _products.html
 ├── cart.html
 ├── index.html
 ├── search.html
