@@ -9,9 +9,18 @@ $files = array(
   'https://cdn.jsdelivr.net/npm/ecomplus-sdk/dist/sdk.min.js',
   'https://cdn.jsdelivr.net/npm/ecomplus-render/dist/render.min.js'
 );
-$content = '';
+
+// start with polyfill script
+$content = file_get_contents(__DIR__ . '/Polyfill.min.js');
 for ($i = 0; $i < count($files); $i++) {
-  $content .= "/* -->> " . $files[$i] . " */\n" . file_get_contents($files[$i]) . "\n\n";
+  $js = file_get_contents($files[$i]);
+  $content .= <<<EOT
+
+/*!
+ * From {$files[$i]}
+ */
+$js
+EOT;
 }
 $dir = __DIR__ . '/storefront@' . $version;
 if (!is_dir($dir)) {
