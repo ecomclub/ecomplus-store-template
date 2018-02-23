@@ -173,16 +173,16 @@ The example below is a simple implementation of a product page:
       </li>
     </ul>
     <a v-bind:href="slug">
-      <h1> {{ Ecom.name() }} </h1>
+      <h1> {{ ecom_name() }} </h1>
     </a>
     <p class="price-block">
-      <span v-if="Ecom.onPromotion()">
+      <span v-if="ecom_onPromotion()">
         {{ currency_symbol }}
-        <strong class="price"> {{ Ecom.formatMoney(price) }} </strong>
-        <span class="base-price"> {{ Ecom.formatMoney(base_price) }} </span>
+        <strong class="price"> {{ ecom_formatMoney(price) }} </strong>
+        <span class="base-price"> {{ ecom_formatMoney(base_price) }} </span>
       </span>
       <span v-else>
-        {{ currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
+        {{ currency_symbol }} <strong class="price"> {{ ecom_formatMoney(ecom_price()) }} </strong>
       </span>
     </p>
     <div v-if="available">
@@ -251,16 +251,17 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
   <div class="col-md-2" v-for="item in hits.hits">
     <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
     <a v-bind:href="item.slug">
-      <h3> {{ Ecom.name() }} </h3>
+      <h3> {{ ecom_name(item) }} </h3>
     </a>
     <p class="price-block">
-      <span v-if="Ecom.onPromotion()">
+      <span v-if="ecom_onPromotion(item)">
         {{ item.currency_symbol }}
-        <strong class="price"> {{ Ecom.formatMoney(item.price) }} </strong>
-        <span class="base-price"> {{ Ecom.formatMoney(item.base_price) }} </span>
+        <strong class="price"> {{ ecom_formatMoney(item.price) }} </strong>
+        <span class="base-price"> {{ ecom_formatMoney(item.base_price) }} </span>
       </span>
       <span v-else>
-        {{ item.currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
+        {{ item.currency_symbol }}
+        <strong class="price"> {{ ecom_formatMoney(ecom_price(item)) }} </strong>
       </span>
     </p>
     <span v-if="item.available">
@@ -370,17 +371,18 @@ The notation is such as the example below:
     <li v-for="item in hits.hits">
       <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
       <a v-bind:href="item.slug">
-        <h4> {{ Ecom.name() }} </h4>
+        <h4> {{ ecom_name(item) }} </h4>
       </a>
       <p> SKU: {{ item.sku }} </p>
       <p class="price-block">
-        <span v-if="Ecom.onPromotion()">
+        <span v-if="ecom_onPromotion(item)">
           {{ item.currency_symbol }}
-          <strong class="price"> {{ Ecom.formatMoney(item.price) }} </strong>
-          <span class="base-price"> {{ Ecom.formatMoney(item.base_price) }} </span>
+          <strong class="price"> {{ ecom_formatMoney(item.price) }} </strong>
+          <span class="base-price"> {{ ecom_formatMoney(item.base_price) }} </span>
         </span>
         <span v-else>
-          {{ item.currency_symbol }} <strong class="price"> {{ Ecom.formatMoney(Ecom.price()) }} </strong>
+          {{ item.currency_symbol }}
+          <strong class="price"> {{ ecom_formatMoney(ecom_price(item)) }} </strong>
         </span>
       </p>
       <button v-if="item.quantity > item.min_quantity" class="buy"> Buy </button>
