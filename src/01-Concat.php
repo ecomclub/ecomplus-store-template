@@ -1,7 +1,7 @@
 <?php
 // concat plugins to single JS file
 // package version
-$version = 0;
+$version = 1;
 $files = array(
   // Vue 2
   'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js',
