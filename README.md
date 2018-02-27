@@ -17,7 +17,7 @@
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
             * [Basic product sample](#basic-product-sample)
-            * [List objects](#list-objects)
+            * [List of objects](#list-of-objects)
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
             * [Products list sample](#products-list-sample)
@@ -210,8 +210,12 @@ Vue data (inside mustache tags and `v-*` attributes) follows this
 
 Note that you can use similar code for other types of objects (API resources).
 
-#### List objects
-Possible values for `data-type`.
+#### List of objects
+It's possible to render a list of Store API
+<a href="https://ecomstore.docs.apiary.io/#reference/categories/all-categories" target="_blank">categories</a>,
+<a href="https://ecomstore.docs.apiary.io/#reference/brands/all-brands" target="_blank">brands</a> or
+<a href="https://ecomstore.docs.apiary.io/#reference/collections/all-collections" target="_blank">collections</a>,
+to do that, you must add the attribute `data-list-all` to the `._ecom-el` element.
 
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
