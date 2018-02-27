@@ -16,6 +16,7 @@
     * [Vue instances](#vue-instances)
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
+            * [Store info sample](#store-info-sample)
             * [Basic product sample](#basic-product-sample)
             * [List of objects](#list-of-objects)
             * [List of categories sample](#list-of-categories-sample)
@@ -162,6 +163,19 @@ Possible values for `data-type`:
 | `order`       | [Reference](https://ecomstore.docs.apiary.io/#reference/orders/order-object) |
 | `application` | [Reference](https://ecomstore.docs.apiary.io/#reference/applications/application-object) |
 | `store`       | [Reference](https://ecomstore.docs.apiary.io/#reference/stores/store-object) |
+
+#### Store info sample
+The example below shows some of the current store information:
+
+```html
+<div class="footer _ecom-el" data-type="store">
+  <div class="logo" v-if="logo">
+    <img v-bind:src="logo.url" v-bind:alt="logo.alt" width="width(logo)" height="height(logo)">
+  </div>
+  <h2 class="store-title"> {{ name }} </h2>
+  <p> {{ description }} </p>
+</div>
+```
 
 #### Basic product sample
 The example below is a simple implementation of a product page:
