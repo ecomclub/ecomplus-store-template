@@ -18,6 +18,7 @@
             * [Object types](#object-types)
             * [Basic product sample](#basic-product-sample)
             * [List of objects](#list-of-objects)
+            * [List of categories sample](#list-of-categories-sample)
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
             * [Products list sample](#products-list-sample)
@@ -217,6 +218,37 @@ It's possible to render a list of Store API
 <a href="https://ecomstore.docs.apiary.io/#reference/collections/all-collections" target="_blank">collections</a>,
 to do that, you must add the attribute `data-list-all` to the `._ecom-el` element.
 
+This is available only for elements with one of following `data-type`:
+
+| Type          | Object model |
+| :---:         | :---: |
+| `brand`       | [Reference](https://ecomstore.docs.apiary.io/#reference/brands/all-brands) |
+| `category`    | [Reference](https://ecomstore.docs.apiary.io/#reference/categories/all-categories) |
+| `collection`  | [Reference](https://ecomstore.docs.apiary.io/#reference/collections/all-collections) |
+
+#### List of categories sample
+The example below is a simple implementation of a list of categories,
+up to 1000 objects, with random order,
+using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a>:
+
+```html
+<ul class="_ecom-el" data-type="category" data-list-all="true">
+  <li v-for="category in results">
+    <a v-bind:href="category.slug">
+      {{ category.name }}
+    </a>
+  </li>
+</ul>
+```
+
+##### Sort list alphabetically
+By default, the objects are randomly ordered on the list,
+if you want alphabetical order, you can use the `alphabeticalSort` pre-built method:
+
+```html
+<li v-for="category in alphabeticalSort(results)">
+```
+
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
 are rendered from `._ecom-el` elements
@@ -296,7 +328,6 @@ so, from 24º to 36º:
 ```
 
 ##### Sort items search result
-
 By default, items will be ordered by popularity (number of page views),
 but you can use custom sort with `data-sort` attribute:
 
@@ -314,7 +345,6 @@ It must have one of the number values below:
 | `4`  | Sort by creation date, new products appear first |
 
 #### Search products by keyword
-
 To find products searching by name and/or keywords, you can use `data-term`:
 
 ```html
@@ -334,7 +364,6 @@ by the specification (property name):
 ```
 
 #### List items from category or brand
-
 To list products from specific categories you should use
 `data-categories` attribute.
 
@@ -353,7 +382,6 @@ Similar to categories, you can list products from specific brands using
 ```
 
 #### List of specific products
-
 You can also list specific items using the `data-ids` attribute, where
 you should put the IDs of respective products separated by comma:
 
