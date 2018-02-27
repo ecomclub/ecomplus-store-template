@@ -17,6 +17,7 @@
         * [Store API objects](#store-api-objects)
             * [Object types](#object-types)
             * [Basic product sample](#basic-product-sample)
+            * [List objects](#list-objects)
         * [Search API objects](#search-api-objects)
             * [List items](#list-items)
             * [Products list sample](#products-list-sample)
@@ -208,6 +209,9 @@ Vue data (inside mustache tags and `v-*` attributes) follows this
 <a href="https://ecomstore.docs.apiary.io/#reference/products/product-object" target="_blank">object reference</a>.
 
 Note that you can use similar code for other types of objects (API resources).
+
+#### List objects
+Possible values for `data-type`.
 
 ### Search API objects
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a> requests
