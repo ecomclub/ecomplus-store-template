@@ -177,6 +177,10 @@ The example below shows some of the current store information:
 </div>
 ```
 
+In this example, Vue data (inside mustache tags and `v-*` attributes) have the
+<a href="https://ecomstore.docs.apiary.io/#reference/authentications" target="_blank">properties listed here</a>,
+following the store object model, but only with public data.
+
 #### Basic product sample
 The example below is a simple implementation of a product page:
 
