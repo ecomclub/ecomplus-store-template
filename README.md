@@ -83,13 +83,11 @@ such as jQuery lib. Final example:
 ```html
 <body>
   <!-- HTML content -->
-
   <script src="https://ecvol.com/js/storefront@1/app.min.js"></script>
   <script>
     Ecom.init()
   </script>
-
-  <!-- Optionally other JS -->
+  <!-- Optionally, other JS -->
 </body>
 ```
 
