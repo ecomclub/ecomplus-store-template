@@ -145,7 +145,7 @@ ID will be defined in function of page URL (slug).
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">instance data</a>
-will be the object returned from
+will be an object with `body` property, `body` is the object returned from
 <a href="https://ecomstore.docs.apiary.io/" target="_blank">Store API</a>,
 with the same properties.
 
@@ -276,7 +276,7 @@ and other attributes depending of search case.
 
 The
 <a href="https://vuejs.org/v2/guide/instance.html#Data-and-Methods" target="_blank">Vue instance data</a>
-will be the object returned from
+will be an object with `body` property, `body` is the object returned from
 <a href="https://ecomsearch.docs.apiary.io/" target="_blank">Search API</a>,
 with the same properties.
 
