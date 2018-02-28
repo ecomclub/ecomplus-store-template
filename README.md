@@ -169,11 +169,11 @@ The example below shows some of the current store information:
 
 ```html
 <div class="footer _ecom-el" data-type="store">
-  <div class="logo" v-if="logo">
-    <img v-bind:src="logo.url" v-bind:alt="logo.alt" width="width(logo)" height="height(logo)">
+  <div class="logo" v-if="body.logo">
+    <img v-bind:src="body.logo.url" v-bind:alt="body.logo.alt" v-bind:width="width(body.logo)">
   </div>
-  <h2 class="store-title"> {{ name }} </h2>
-  <p> {{ description }} </p>
+  <h2 class="store-title"> {{ body.name }} </h2>
+  <p> {{ body.description }} </p>
 </div>
 ```
 
@@ -187,31 +187,31 @@ The example below is a simple implementation of a product page:
 
 ```html
 <div class="_ecom-el" data-type="product">
-  <div v-bind:class="'prod-' + sku" v-if="visible">
+  <div v-bind:class="'prod-' + body.sku" v-if="body.visible">
     <ul>
-      <li v-for="picture in pictures">
+      <li v-for="picture in body.pictures">
         <img v-bind:src="picture.big.url" v-bind:alt="picture.big.alt" v-bind:data-zoom="picture.zoom.url" />
       </li>
     </ul>
-    <a v-bind:href="slug">
+    <a v-bind:href="body.slug">
       <h1> {{ name() }} </h1>
     </a>
     <p class="price-block">
       <span v-if="onPromotion()">
-        {{ currency_symbol }}
-        <strong class="price"> {{ formatMoney(price) }} </strong>
-        <span class="base-price"> {{ formatMoney(base_price) }} </span>
+        {{ body.currency_symbol }}
+        <strong class="price"> {{ formatMoney(body.price) }} </strong>
+        <span class="base-price"> {{ formatMoney(body.base_price) }} </span>
       </span>
       <span v-else>
-        {{ currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
+        {{ body.currency_symbol }} <strong class="price"> {{ formatMoney(price()) }} </strong>
       </span>
     </p>
-    <div v-if="available">
-      <button v-if="quantity > min_quantity" class="buy"> Buy </button>
+    <div v-if="body.available">
+      <button v-if="body.quantity > body.min_quantity" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
     </div>
     <div class="description">
-      {{ body_html }}
+      {{ body.body_html }}
     </div>
   </div>
 </div>
@@ -252,7 +252,7 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
 
 ```html
 <ul class="_ecom-el" data-type="category" data-list-all="true">
-  <li v-for="category in results">
+  <li v-for="category in body.results">
     <a v-bind:href="category.slug">
       {{ category.name }}
     </a>
@@ -265,7 +265,7 @@ By default, the objects are randomly ordered on the list,
 if you want alphabetical order, you can use the `alphabeticalSort` pre-built method:
 
 ```html
-<li v-for="category in alphabeticalSort(results)">
+<li v-for="category in alphabeticalSort(body.results)">
 ```
 
 ### Search API objects
@@ -307,7 +307,7 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
 
 ```html
 <div class="row _ecom-el" data-type="items">
-  <div class="col-md-2" v-for="item in hits.hits">
+  <div class="col-md-2" v-for="item in body.hits.hits">
     <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
     <a v-bind:href="item.slug">
       <h3> {{ name(item) }} </h3>
@@ -419,11 +419,11 @@ The notation is such as the example below:
 
 ```html
 <div class="_ecom-el" data-type="collection" data-id="c92000000000000000001111" data-list="products" data-size="12">
-  <a v-bind:href="slug">
-    <h3 class="coll-name"> {{ name }} </h3>
+  <a v-bind:href="body.slug">
+    <h3 class="coll-name"> {{ body.name }} </h3>
   </a>
   <ul>
-    <li v-for="item in hits.hits">
+    <li v-for="item in body.hits.hits">
       <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
       <a v-bind:href="item.slug">
         <h4> {{ name(item) }} </h4>
