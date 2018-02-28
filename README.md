@@ -75,6 +75,24 @@ Then, start the layout rendering with JS below:
 Ecom.init()
 ```
 
+The scripts should be loaded after the HTML content of the page,
+so you have to put them before `</body>` tag,
+we also recommend to load them before other scripts,
+such as jQuery lib. Final example:
+
+```html
+<body>
+  <!-- HTML content -->
+
+  <script src="https://ecvol.com/js/storefront@1/app.min.js"></script>
+  <script>
+    Ecom.init()
+  </script>
+
+  <!-- Optionally other JS -->
+</body>
+```
+
 # Guide
 HTML classes used by this library will be named with the prefix `_ecom-`,
 data attributes may be used together with the classes in the elements.
