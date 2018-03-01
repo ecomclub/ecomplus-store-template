@@ -26,4 +26,4 @@ $dir = __DIR__ . '/storefront@' . $version;
 if (!is_dir($dir)) {
   mkdir($dir);
 }
-file_put_contents($dir . '/app.min.js', $content);
+file_put_contents($dir . '/storefront.min.js', $content);

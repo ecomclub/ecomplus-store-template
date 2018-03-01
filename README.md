@@ -58,7 +58,7 @@ and the
 You can include storefront "all in one" JS file **(recommended)**:
 
 ```html
-<script src="https://ecvol.com/js/storefront@1/app.min.js"></script>
+<script src="https://ecvol.com/js/storefront@1/storefront.min.js"></script>
 ```
 
 Or import the scripts one by one (not recommended):
@@ -83,7 +83,7 @@ such as jQuery lib. Final example:
 ```html
 <body>
   <!-- HTML content -->
-  <script src="https://ecvol.com/js/storefront@1/app.min.js"></script>
+  <script src="https://ecvol.com/js/storefront@1/storefront.min.js"></script>
   <script>
     Ecom.init()
   </script>
