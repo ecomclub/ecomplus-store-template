@@ -27,6 +27,7 @@
             * [List items from category or brand](#list-items-from-category-or-brand)
             * [List of specific products](#list-of-specific-products)
         * [List products from collection](#list-products-from-collection)
+    * [Recommended CSS](#recommended-css)
 
 {% raw %}
 
@@ -472,5 +473,71 @@ collection products by IDs such as a [Search API object](#search-api-objects).
 In addition, you can use the other
 [attributes for a Search API items list](#list-items),
 such as the `data-size` used in the above example.
+
+## Recommended CSS
+After the renderization of each `._ecom-el` element,
+the class `rendered` is automatically added, to hide the non-rendered elements
+we recommend to use the following styles:
+
+```css
+._ecom-el {
+  opacity: 0;
+}
+._ecom-el.rendered {
+  opacity: 1;
+}
+```
+
+If you want to use fade effect:
+
+```css
+._ecom-el {
+  opacity: 0;
+}
+._ecom-el.rendered {
+  opacity: 1;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Firefox */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Opera */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+```
+
+Of course you can change the animation time from 1s to what you want.
 
 {% endraw %}
