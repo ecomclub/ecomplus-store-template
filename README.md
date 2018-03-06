@@ -443,7 +443,8 @@ To list products of a collection you have to use both
 The notation is such as the example below:
 
 ```html
-<div class="_ecom-el" data-type="collection" data-id="c92000000000000000001111" data-list="products" data-size="12">
+<div class="_ecom-el" data-type="collection" data-id="c92000000000000000001111"
+  data-list="products" data-size="12">
   <a v-bind:href="body.slug">
     <h3 class="coll-name"> {{ body.name }} </h3>
   </a>
