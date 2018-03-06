@@ -269,7 +269,7 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
 
 ```html
 <ul class="_ecom-el" data-type="category" data-list-all="true">
-  <li v-for="category in body.results">
+  <li v-for="category in body.result">
     <a v-bind:href="category.slug">
       {{ category.name }}
     </a>
@@ -282,7 +282,7 @@ By default, the objects are randomly ordered on the list,
 if you want alphabetical order, you can use the `alphabeticalSort` pre-built method:
 
 ```html
-<li v-for="category in alphabeticalSort(body.results)">
+<li v-for="category in alphabeticalSort(body.result)">
 ```
 
 ### Search API objects
