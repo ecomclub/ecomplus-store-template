@@ -6,7 +6,7 @@ $files = array(
   // Vue 2
   'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js',
   // storefront SDK and render in current version
-  'https://cdn.jsdelivr.net/npm/ecomplus-sdk@1.6.2/dist/sdk.min.js',
+  'https://cdn.jsdelivr.net/npm/ecomplus-sdk@1.6.3/dist/sdk.min.js',
   'https://cdn.jsdelivr.net/npm/ecomplus-render@1.9.4/dist/render.min.js'
 );
 
