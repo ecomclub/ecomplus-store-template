@@ -228,7 +228,7 @@ The example below is a simple implementation of a product page:
       </span>
     </p>
     <div v-if="body.available">
-      <button v-if="body.quantity > body.min_quantity" class="buy"> Buy </button>
+      <button v-if="inStock()" class="buy"> Buy </button>
       <div class="no-stock" v-else> Out of stock </div>
     </div>
     <div class="description">
@@ -348,7 +348,7 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
         </span>
       </p>
       <span v-if="body.available">
-        <button v-if="body.quantity > body.min_quantity" class="buy"> Buy </button>
+        <button v-if="inStock()" class="buy"> Buy </button>
         <span class="no-stock" v-else> Out of stock </span>
       </span>
     </div>
@@ -469,7 +469,7 @@ The notation is such as the example below:
             <strong class="price"> {{ formatMoney(price(body)) }} </strong>
           </span>
         </p>
-        <button v-if="body.quantity > body.min_quantity" class="buy"> Buy </button>
+        <button v-if="inStock()" class="buy"> Buy </button>
         <span class="no-stock" v-else> Out of stock </span>
       </div>
     </li>
