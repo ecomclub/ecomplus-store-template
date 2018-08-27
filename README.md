@@ -1,10 +1,10 @@
 # Storefront theme
 
 ## Pages
-1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
-2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
-4. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+1. [Storefront theme](./)
+2. [Template structure](./structure/)
+3. [JavaScript methods API](./methods/)
+4. [Implement a search engine](./search/)
 
 ## Summary
 1. [Introduction](#introduction)
@@ -34,7 +34,7 @@
 # Introduction
 This document is intended to list predefined mustache tags,
 HTML classes and attributes, and
-<a href="https://ecomclub.github.io/ecomplus-store-template/methods/">JavaScript methods</a>
+<a href="./methods/">JavaScript methods</a>
 (functions) for layout rendering with
 <a href="https://github.com/ecomclub/ecomplus-store-render" target="_blank">ecomplus-store-render</a>.
 
@@ -43,7 +43,7 @@ After reading this documentation, you will be able to customize a theme
 (editing some elements only) or start a new theme from scratch.
 
 If you want to create a new theme from scratch, be sure to follow
-<a href="https://ecomclub.github.io/ecomplus-store-template/structure/">this template structure</a>.
+<a href="./structure/">this template structure</a>.
 
 E-Com Plus storefront uses
 <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js 2</a> framework, so
@@ -395,7 +395,7 @@ To find products searching by name and/or keywords, you can use `data-term`:
 <div class="_ecom-el" data-type="items" data-term="tshirt">
 ```
 
-<a href="https://ecomclub.github.io/ecomplus-store-template/search/">Here</a>
+<a href="./search/">Here</a>
 you can check an complete example of store search engine implementation.
 
 #### Filter items by specifications

@@ -1,10 +1,10 @@
 # Template structure
 
 ## Pages
-1. [Storefront theme](https://ecomclub.github.io/ecomplus-store-template/)
-2. [Template structure](https://ecomclub.github.io/ecomplus-store-template/structure/)
-3. [JavaScript methods API](https://ecomclub.github.io/ecomplus-store-template/methods/)
-4. [Implement a search engine](https://ecomclub.github.io/ecomplus-store-template/search/)
+1. [Storefront theme](./../)
+2. [Template structure](./../structure/)
+3. [JavaScript methods API](./../methods/)
+4. [Implement a search engine](./../search/)
 
 ## Summary
 1. [Introduction](#introduction)
@@ -26,7 +26,7 @@ E-Com Plus dashboard tools.
 
 Before you start building your template,
 you must also read (at least) the storefront
-<a href="https://ecomclub.github.io/ecomplus-store-template/">theme specifications</a>.
+<a href="./../">theme specifications</a>.
 
 # Basic directory tree
 ```
