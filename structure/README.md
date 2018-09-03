@@ -45,7 +45,7 @@ you must also read (at least) the storefront
 ```
 
 Inside the `static` folder should be all non-HTML files,
-if necessary, you can also create custom folders within it.
+you can also create custom folders within it.
 
 The `.rendered` and `.dist` folders
 should be **left empty**.
