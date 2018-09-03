@@ -50,6 +50,13 @@ E-Com Plus storefront uses
 store template specifications follow the
 <a href="https://vuejs.org/v2/guide/syntax.html" target="_blank">Vue template syntax</a>.
 
+After reading the docs,
+<a href="https://github.com/ecomclub/ecomplus-store-template/wiki" target="_blank">visit the Wiki</a>
+to make suggestions or contribute with documentation content and examples.
+
+If you need help, feel free to
+<a href="https://github.com/ecomclub/ecomplus-store-template/issues" target="_blank">open a new issue</a>.
+
 # Getting started
 Your HTML file must include
 <a href="https://vuejs.org/v2/" target="_blank">Vue</a>,
