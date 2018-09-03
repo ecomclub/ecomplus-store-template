@@ -53,7 +53,6 @@ store template specifications follow the
 After reading the docs,
 <a href="https://github.com/ecomclub/ecomplus-store-template/wiki" target="_blank">visit the Wiki</a>
 to make suggestions or contribute with documentation content and examples.
-
 If you need help, feel free to
 <a href="https://github.com/ecomclub/ecomplus-store-template/issues" target="_blank">open a new issue</a>.
 
