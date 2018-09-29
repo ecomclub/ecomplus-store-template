@@ -7,7 +7,7 @@ $files = array(
   'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js',
   // storefront SDK and render in current version
   'https://cdn.jsdelivr.net/npm/ecomplus-sdk@1.11.0/dist/sdk.min.js',
-  'https://cdn.jsdelivr.net/npm/ecomplus-render@2.0.0/dist/render.min.js'
+  'https://cdn.jsdelivr.net/npm/ecomplus-render@2.1.0/dist/render.min.js'
 );
 
 // start with polyfill script
