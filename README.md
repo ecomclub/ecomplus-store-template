@@ -9,6 +9,7 @@
 ## Summary
 1. [Introduction](#introduction)
 2. [Getting started](#getting-started)
+    * [Renderization callback](#renderization-callback)
 3. [Guide](#guide)
     * [App main element](#app-main-element)
         * [Specifying language](#specifying-language)
