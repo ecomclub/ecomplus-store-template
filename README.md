@@ -98,6 +98,21 @@ such as jQuery lib. Final example:
 </body>
 ```
 
+## Renderization callback
+You probably want to manipulate the rendered elements
+with JavaScript (maybe with jQuery),
+to work properly, you must do this **after the renderization**.
+
+Send a
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function" target="_blank">callback function</a>
+as first param of _init_ method:
+
+```javascript
+Ecom.init(function () {
+  // handle events and effects with rendered elements
+})
+```
+
 # Guide
 HTML classes used by this library will be named with the prefix `_ecom-`,
 data attributes may be used together with the classes in the elements.
