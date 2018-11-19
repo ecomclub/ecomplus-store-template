@@ -351,26 +351,26 @@ using <a href="https://vuejs.org/v2/guide/list.html" target="_blank">Vue list</a
 ```html
 <div class="row _ecom-el" data-type="items">
   <div class="col-md-2" v-for="item in body.hits.hits">
-    <div v-if="body = item._source" class="item">
-      <div v-if="body.pictures && body.pictures[0] && body.pictures[0].normal" class="item-img">
-        <img v-bind:src="body.pictures[0].normal.url" v-bind:alt="body.pictures[0].normal.alt" />
+    <div v-if="item = item._source" class="item">
+      <div v-if="item.pictures && item.pictures[0] && item.pictures[0].normal" class="item-img">
+        <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
       </div>
-      <a v-bind:href="body.slug">
-        <h3> {{ name(body) }} </h3>
+      <a v-bind:href="item.slug">
+        <h3> {{ name(item) }} </h3>
       </a>
       <p class="price-block">
-        <span v-if="onPromotion(body)">
-          {{ body.currency_symbol }}
-          <strong class="price"> {{ formatMoney(body.price) }} </strong>
-          <span class="base-price"> {{ formatMoney(body.base_price) }} </span>
+        <span v-if="onPromotion(item)">
+          {{ item.currency_symbol }}
+          <strong class="price"> {{ formatMoney(item.price) }} </strong>
+          <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
         </span>
         <span v-else>
-          {{ body.currency_symbol }}
-          <strong class="price"> {{ formatMoney(price(body)) }} </strong>
+          {{ item.currency_symbol }}
+          <strong class="price"> {{ formatMoney(price(item)) }} </strong>
         </span>
       </p>
-      <span v-if="body.available">
-        <button v-if="inStock()" class="buy"> Buy </button>
+      <span v-if="item.available">
+        <button v-if="inStock(item)" class="buy"> Buy </button>
         <span class="no-stock" v-else> Out of stock </span>
       </span>
     </div>
@@ -472,26 +472,26 @@ The notation is such as the example below:
   </a>
   <ul>
     <li v-for="item in body.hits.hits">
-      <div v-if="body = item._source" class="item">
-        <div v-if="body.pictures && body.pictures[0] && body.pictures[0].normal" class="item-img">
-          <img v-bind:src="body.pictures[0].normal.url" v-bind:alt="body.pictures[0].normal.alt" />
+      <div v-if="item = item._source" class="item">
+        <div v-if="item.pictures && item.pictures[0] && item.pictures[0].normal" class="item-img">
+          <img v-bind:src="item.pictures[0].normal.url" v-bind:alt="item.pictures[0].normal.alt" />
         </div>
-        <a v-bind:href="body.slug">
-          <h4> {{ name(body) }} </h4>
+        <a v-bind:href="item.slug">
+          <h4> {{ name(item) }} </h4>
         </a>
-        <p> SKU: {{ body.sku }} </p>
+        <p> SKU: {{ item.sku }} </p>
         <p class="price-block">
-          <span v-if="onPromotion(body)">
-            {{ body.currency_symbol }}
-            <strong class="price"> {{ formatMoney(body.price) }} </strong>
-            <span class="base-price"> {{ formatMoney(body.base_price) }} </span>
+          <span v-if="onPromotion(item)">
+            {{ item.currency_symbol }}
+            <strong class="price"> {{ formatMoney(item.price) }} </strong>
+            <span class="base-price"> {{ formatMoney(item.base_price) }} </span>
           </span>
           <span v-else>
-            {{ body.currency_symbol }}
-            <strong class="price"> {{ formatMoney(price(body)) }} </strong>
+            {{ item.currency_symbol }}
+            <strong class="price"> {{ formatMoney(price(item)) }} </strong>
           </span>
         </p>
-        <button v-if="inStock()" class="buy"> Buy </button>
+        <button v-if="inStock(item)" class="buy"> Buy </button>
         <span class="no-stock" v-else> Out of stock </span>
       </div>
     </li>
